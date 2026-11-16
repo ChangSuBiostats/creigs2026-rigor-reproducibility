@@ -1,54 +1,92 @@
 # Notes
 
 Findings, differences from the existing deck images, and gaps in the sources.
-Numbers come from the snapshot logged in `data/SOURCES.md` (downloaded
-2026-11-15; 2,202 studies dated 2002-07-26 to 2026-09-30).
+All numbers come from the snapshots logged in `data/SOURCES.md`.
 
-## Data source
+## Code and environment
 
-- The README path `github.com/vals/single_cell_studies` does not exist. The
-  repository is `github.com/vals/single-cell-studies` (hyphens), and it holds
-  only the analysis notebooks, last changed 2024-12-02. The table itself is a
-  live Google Sheet served at `https://nxn.se/single-cell-studies/data.tsv`.
-  That is the latest version and is what `data/get_data.py` downloads.
-- The table is live, so a later download can differ. Figures are built from the
-  committed snapshot in `data/raw/`.
-- nxn.se answers Python's default `urllib` client with HTTP 403, so the download
-  script calls the system `curl`.
+- All code is R (tidyverse, ggplot2), run with R 4.5.2. Package versions are in
+  `renv.lock`; restore them with `renv::restore()`. The project is not
+  renv-activated (no `renv/` folder), so the scripts use whichever library is
+  on the path; the lockfile records what the committed figures were built with.
+- The first version of this repository was Python (commits up to `2875ee9`).
+  The R port reproduces the same processed numbers.
+- `Rscript run_all.R` twice in a row gives byte-identical files in `output/`
+  and `data/processed/`.
+
+## Data sources
+
+### Svensson single-cell studies database (slide 2)
+
+- Snapshot of 2026-11-15: 2,202 studies dated 2002-07-26 to 2026-09-30.
+- The path in the original brief, `github.com/vals/single_cell_studies`, does
+  not exist. The repository is `github.com/vals/single-cell-studies`
+  (hyphens) and holds only notebooks. The table is a live Google Sheet served
+  at `https://nxn.se/single-cell-studies/data.tsv`.
+- nxn.se answers the default R and Python download clients with HTTP 403, so
+  `data/get_data.R` calls the system `curl`.
 - **Curation thins out after 2021.** Studies per year: 474 (2020), 328 (2021),
   216 (2022), 86 (2023), 77 (2024), 127 (2025), 34 (2026, to September). This
-  reflects how much has been entered into the database, not how many studies
-  were published. Recent entries are also less complete: the cell count is
-  filled in for 98% of 2018 studies but 35% of 2025 studies. Yearly medians
-  from 2023 onward rest on 8 to 45 studies.
+  reflects how much has been entered, not how many studies were published.
+  Recent entries are also less complete: the cell count is filled in for 98% of
+  2018 studies but 35% of 2025 studies. Yearly medians from 2023 onward rest on
+  8 to 45 studies, and the recent entries may be skewed towards notable large
+  studies (not tested). Decision (Chang, Nov 16): keep all years in the figure
+  and say on the slide that 2023 onward is sparsely curated.
+
+### PubMed (slide 2)
+
+- One record count per publication year, 2009 to 2025, from NCBI E-utilities.
+  The query (title or abstract; reviews excluded) is in `data/get_data.R` and
+  `data/SOURCES.md`.
+- The count depends on the query. It shows the trend, not an exact number of
+  studies: it misses papers that do not name the method in the title or
+  abstract, and it includes methods and reanalysis papers.
+- 2026 is left out because the year is incomplete.
+- The script stops if PubMed reports that it could not match a phrase as
+  written, since PubMed otherwise rewrites the query silently.
+
+### CELLxGENE Discover (slide 3)
+
+- Snapshot of 2026-11-16 from the public curation API: 406 collections holding
+  2,295 datasets, 343 collections with human data.
+- **Unit of analysis is the collection**, which corresponds to one publication.
+  Datasets are not used as the unit because one study is often split into many
+  datasets (for example one per cell type) that share donors.
+- Publication date is the paper's date from the publisher metadata, not the
+  date the data were added to CELLxGENE. 11 collections have no publication
+  metadata and are left out of the figures. 35 collections are preprints.
+- **This is not a census of the literature.** CELLxGENE holds data that authors
+  or consortia chose to deposit and that met its schema, so it leans towards
+  human, 10x and atlas-scale studies. Trends describe studies in CELLxGENE.
+- 2026 is a partial year (to mid-November).
 
 ## Slide 2
 
-### fig02a (existing panel 1: cells per study over time)
+### fig02a (cells per study over time; existing panel 1)
 
-Reconstructed from the database and it matches.
+Reconstructed from the database and it matches the existing panel.
 
 - What the existing panel shows: every study with a reported cell count, all
   measurement types (not only RNA-seq), dated 2009 or later; 1,539 studies.
   Eight earlier studies (2002 to 2008) with cell counts are left out.
-- Check: `reference/check_slide02_a.py` locates the 18 median markers in the
+- Check: `reference/check_slide02_a.R` locates the 18 median markers in the
   deck image and compares them with the medians computed here. All 18 agree to
   within 0.4 pixels on both axes (0.36 px on the y-axis is under 1% in cell
-  count). The yearly medians are in `data/processed/fig02a_yearly_median.csv`.
-- Axes: log y-axis from 1 to above 100M, x-axis 2009 to 2026; same in both.
-- The labelled maximum is right: Tahoe-100M (Zhang et al., bioRxiv, 2025-02-24)
-  reports 152,915,189 cells.
+  count). The build fails if they ever differ by more than a pixel.
+- The largest study is Tahoe-100M (Zhang et al., bioRxiv, 2025-02-24) with
+  152,915,189 cells. The existing panel labels it; `fig02a` does not, to keep
+  the figure clean.
 - **The title on the existing image overstates the trend.** "Cells per study
   grew ~1,000-fold in a decade" holds only for the most favourable window. The
   ratio of yearly medians ten years apart ranges from 165 to 926:
   2012 to 2022 is 926-fold, 2013 to 2023 is 761, 2014 to 2024 is 649,
   2015 to 2025 is 422, 2016 to 2026 is 556. "Several hundred-fold" is
-  supported; "1,000-fold" is not. `fig02a` has no in-figure title (deck style),
-  so the wording on the slide should be chosen with this in mind.
+  supported; "1,000-fold" is not.
 - The medians for 2009 to 2012 come from 2 to 4 studies each, and 2026 from 8.
   They are drawn as in the existing panel.
 
-### fig02b (existing panel 2: tissues)
+### fig02b (tissues; existing panel 2)
 
 Reconstructed from the database and it matches: all 13 percentages agree to
 the printed 0.1%, as do "Other" (31.7%) and its 197 tissues.
@@ -60,45 +98,73 @@ the printed 0.1%, as do "Other" (31.7%) and its 197 tissues.
   "Proportion (%)", does not say this; `fig02b` labels it "Share of tissue
   mentions (%)".
 - 403 of the 2,202 studies have no tissue recorded and are not in the figure.
-- "Culture" is the database's label for in vitro samples, so it is not a tissue
-  in the same sense as the others; it is coloured separately, as in the
-  existing panel.
+- "Culture" is the database's label for in vitro samples, so it is coloured
+  separately, as in the existing panel.
 - Style deviation: tissue names and value labels are 9 pt, not the 12 pt in the
-  README. Fourteen rows do not fit in a 2.85 in panel at 12 pt. At 12 pt the
-  figure would have to drop to about the top 8 tissues plus "Other".
+  README. Fourteen rows do not fit in a 2.85 in panel at 12 pt.
 
-### fig02c (new: individuals per study over time)
+### fig02c (publications per year; new)
 
-- The database does record this, in a column named "Number individuals". No
-  alternative source was needed.
-- Coverage: 714 of 2,202 studies have a value. It is filled in only for studies
-  that include human samples (714 of 1,038 human studies; none of the
-  non-human studies). The figure is therefore about human studies.
-- The figure shows 713 studies from 2012 on; one 2004 study (2 individuals) is
-  outside the x-axis range.
-- Yearly median individuals per study: 3 (2016), 6 (2018), 10 (2020),
-  11 (2022), 38 (2024), 23 (2025). The largest studies grew faster: the yearly
-  maximum went from 88 (2016) to 259 (2020) to 1,047 (2025).
-- The median line is drawn only for years with at least 5 studies (2015 to
-  2025). The 2023 to 2025 medians rest on 23, 16 and 17 studies, so the jump in
-  2024 is not firm evidence of a step change.
-- The typical study is still small: the median over all 714 studies is 9
-  individuals, and a quarter have 4 or fewer.
+- PubMed records rise from 19 (2013) to 1,100 (2019) to 11,744 (2025).
+- Caveats are under "PubMed" above.
 
-## Slide 3 (scoping only; nothing built yet)
+### Individuals per study from the Svensson database (dropped)
 
-What the Svensson database covers:
+The Svensson table has a "Number individuals" column (714 studies, human
+only). A figure from it was built in the Python version (commit `0132de0`) and
+then replaced by `fig03a`, which uses CELLxGENE, following the decision to
+build slide 3 from CELLxGENE only. The two sources agree on the scale: the
+Svensson yearly median was 10 in 2020 and 11 in 2022; CELLxGENE gives 11 and 18.
 
-| Dimension | Field | Coverage | Usable? |
+## Slide 3
+
+### What CELLxGENE covers
+
+| Dimension | Field | Usable? |
+|---|---|---|
+| Number of individuals | `donor_id` | Yes (`fig03a`) |
+| Disease vs. control | `disease` ("normal" marks unaffected donors) | Yes (`fig03b`) |
+| Platform | `assay` | Yes (`fig03b`) |
+| Number of batches | `batch_condition` | No. It names the columns the authors declared as batch variables, is filled in for 475 of 2,295 datasets, and does not give a number of batches. |
+| Longitudinal design | none | No. `development_stage` gives donor age, not repeated sampling of the same donor. |
+
+Batches and longitudinal design would need manual curation or reading the
+per-cell data of each dataset. Neither was done.
+
+### fig03a (donors per study over time)
+
+- 330 human collections with a publication date and at least one donor
+  (3 human collections have only placeholder donor labels and are left out).
+- Donor labels "pooled", "unknown", "na" and similar are not counted.
+- Yearly median donors per study: 5 (2019), 11 (2020), 11.5 (2021), 18 (2022),
+  18 (2023), 20 (2024), 19 (2025), 23 (2026). The largest study per year grew
+  from 57 (2020) to 981 (2022) to 1,606 (2026).
+- The median roughly doubled between 2020 and 2022 and has risen slowly since.
+  The upper tail grew much faster than the median.
+- The median line is drawn for years with at least 5 collections (2018 on).
+  2018 has 6 collections and 2019 has 11, so the dip in 2019 is noise.
+- Donor identifiers are the authors' labels. If one collection uses two
+  labels for the same person, that person is counted twice.
+
+### fig03b (design complexity by period)
+
+Share of human collections, by publication period:
+
+| Period | Collections | Disease and control donors | More than one assay |
 |---|---|---|---|
-| Number of individuals | Number individuals | 714 studies, human only | Yes (this is fig02c) |
-| Platform or technique | Technique | 94% of 2019 studies, 70% of 2022, 26% of 2025 | Yes, up to about 2022 |
-| Platforms per study | Technique, split on " & " | 140 studies list more than one | Yes, but there is no upward trend (at most 15% of studies in any year) |
-| Disease vs. control | Disease, Contrasts | Disease in 194 studies, Contrasts in 275, free text | Partly; too sparse and unstructured for a trend without recoding by hand |
-| Longitudinal design | none (22 Contrasts entries mention time) | not recorded | No |
-| Number of batches | none | not recorded | No |
-| Tissues per study | Tissue, split on commas | 1,799 studies | Yes |
+| 2018 to 2020 | 47 | 23% | 23% |
+| 2021 to 2023 | 135 | 43% | 47% |
+| 2024 to 2026 | 148 | 41% | 41% |
 
-Batches, longitudinal design and a structured disease/control flag would need
-another source (CELLxGENE Census sample metadata is the most promising: it has
-donor, disease, assay and development stage per cell) or manual curation.
+- **Both shares rose after 2020 and then levelled off.** The data support
+  "more complex than in 2018 to 2020", not "still increasing".
+- Years are pooled into three-year periods because single years have as few as
+  6 collections and the yearly lines were noisy.
+- "Disease and control donors" means the collection has at least one donor
+  labelled "normal" and at least one labelled with a disease. It does not
+  check that the comparison is the aim of the study.
+- "More than one assay" counts distinct assay labels, so two chemistry
+  versions of the same platform (10x 3' v2 and v3) count as two. It is a
+  measure of technical heterogeneity within a study, not strictly of the
+  number of platforms.
+- Style deviation: period labels are 8 pt, not 12 pt, to fit six labels.

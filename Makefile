@@ -1,4 +1,4 @@
 all:
-	python run_all.py
+	Rscript run_all.R
 
 .PHONY: all

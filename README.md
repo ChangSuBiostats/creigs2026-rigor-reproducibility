@@ -5,14 +5,15 @@ This repo makes every figure in the lecture deck reproducible. It does not edit 
 figures are placed into the .pptx separately.
 
 ## Ground rules
-- One script per figure: `figures/figNN_short_name.py` (or `.R`). The script reads from
-  `data/`, writes to `output/`, and makes no other changes.
+- All code is R (tidyverse and ggplot2). One script per figure:
+  `figures/figNN_short_name.R`. The script reads from `data/`, writes to `output/`, and
+  makes no other changes. Run scripts from the repository root.
 - Raw data in `data/raw/` is never edited by hand. Downloads are scripted in
-  `data/get_data.py`, which records the source URL, access date and file checksum in
+  `data/get_data.R`, which records the source URL, access date and file checksum in
   `data/SOURCES.md`.
 - Derived tables go in `data/processed/` and are produced by scripts.
-- `make all` (or `python run_all.py`) rebuilds every figure from scratch.
-- Pin the environment (`environment.yml` or `renv.lock`). Set seeds for anything random,
+- `make all` (or `Rscript run_all.R`) rebuilds every figure from scratch.
+- Pin the environment (`renv.lock`; restore with `renv::restore()`). Set seeds for anything random,
   and record the seed in the script header.
 - Commit after each figure is working. Message format: `figNN: <what changed>`.
 - Each script starts with a header that gives the slide number, what the figure shows,
@@ -36,24 +37,30 @@ figures are placed into the .pptx separately.
 
 ## Tasks
 
-### Slide 2: "Rapid Growth in Single Cell Studies"
+### Slide 2: "Rapid Growth in Single Cell Studies" (done; see `NOTES.md`)
 Source: Svensson, da Veiga Beltrame & Pachter (2020), *A curated database reveals trends in
-single-cell transcriptomics*, Database. The study table is believed to be at
-github.com/vals/single_cell_studies; check that it is and use the latest version.
+single-cell transcriptomics*, Database. The live table is at
+nxn.se/single-cell-studies/data.tsv (the notebooks are at github.com/vals/single-cell-studies).
+Final design, three panels: `fig02c` publications per year (PubMed count), `fig02a` cells
+per study, `fig02b` tissue share. Original tasks, kept for the record:
 1. **Verify the two existing figures.** Another agent made them. Reconstruct each one
    from the database (copies of the current images go in `reference/slide02_*.png`),
    then compare and record any differences in `NOTES.md`: axes, counts, date range,
    log scale.
    - `fig02a`: the first existing panel, reproduced
    - `fig02b`: the second existing panel, reproduced
-2. **New figure, `fig02c`: number of subjects (individuals) per study over time.**
+2. **New figure: number of subjects (individuals) per study over time.** Built first
+   from the Svensson database, then moved to slide 3 as `fig03a` using CELLxGENE.
    Publication date on the x-axis, subjects per study on the y-axis (log scale if the
    range calls for it); points plus a smoothed trend or yearly median. First check
    whether the database records the number of individuals or donors. If it doesn't,
    report that and propose an alternative (e.g., samples per study, or a manually
    curated subset) before building anything.
 
-### Slide 3: "Increasing Complexity of Single Cell Studies"
+### Slide 3: "Increasing Complexity of Single Cell Studies" (done; see `NOTES.md`)
+Decision (Chang, Nov 16): use CELLxGENE Discover only. `fig03a` donors per study over
+time; `fig03b` share of studies with disease and control donors, and with more than one
+assay. Batches and longitudinal design are not recorded there. Original brief:
 Summarize how study design has become more complex over time:
 - Technical: number of batches, sequencing platform or technique (and how many
   platforms per study)
@@ -92,6 +99,6 @@ name them `fig07a_1`, `fig07a_2`, and so on.
 
 ## Repo layout
 ```
-data/raw/  data/processed/  data/get_data.py  data/SOURCES.md
+data/raw/  data/processed/  data/get_data.R  data/make_processed.R  data/SOURCES.md
 figures/   output/          reference/
-NOTES.md   run_all.py (or Makefile)  environment.yml  README.md
+NOTES.md   run_all.R  Makefile  renv.lock  README.md

@@ -1,346 +1,95 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="280.8pt" height="205.2pt" viewBox="0 0 280.8 205.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <metadata>
-  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-   <cc:Work>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:format>image/svg+xml</dc:format>
-    <dc:creator>
-     <cc:Agent>
-      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
-     </cc:Agent>
-    </dc:creator>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs>
-  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
- </defs>
- <g id="figure_1">
-  <g id="patch_1">
-   <path d="M 0 205.2 
-L 280.8 205.2 
-L 280.8 0 
-L 0 0 
-z
-" style="fill: #ffffff"/>
-  </g>
-  <g id="axes_1">
-   <g id="patch_2">
-    <path d="M 81.096177 165.897182 
-L 277.79976 165.897182 
-L 277.79976 3.00024 
-L 81.096177 3.00024 
-z
-" style="fill: #ffffff"/>
-   </g>
-   <g id="matplotlib.axis_1">
-    <g id="xtick_1">
-     <g id="line2d_1">
-      <defs>
-       <path id="m91ce473e34" d="M 0 0 
-L 0 3.5 
-" style="stroke: #000000; stroke-width: 0.8"/>
-      </defs>
-      <g>
-       <use xlink:href="#m91ce473e34" x="81.096177" y="165.897182" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_1">
-      <text style="font-size: 12px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: middle" x="81.096177" y="181.973354" transform="rotate(-0 81.096177 181.973354)">0</text>
-     </g>
-    </g>
-    <g id="xtick_2">
-     <g id="line2d_2">
-      <g>
-       <use xlink:href="#m91ce473e34" x="131.532994" y="165.897182" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_2">
-      <text style="font-size: 12px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: middle" x="131.532994" y="181.973354" transform="rotate(-0 131.532994 181.973354)">10</text>
-     </g>
-    </g>
-    <g id="xtick_3">
-     <g id="line2d_3">
-      <g>
-       <use xlink:href="#m91ce473e34" x="181.96981" y="165.897182" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_3">
-      <text style="font-size: 12px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: middle" x="181.96981" y="181.973354" transform="rotate(-0 181.96981 181.973354)">20</text>
-     </g>
-    </g>
-    <g id="xtick_4">
-     <g id="line2d_4">
-      <g>
-       <use xlink:href="#m91ce473e34" x="232.406626" y="165.897182" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_4">
-      <text style="font-size: 12px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: middle" x="232.406626" y="181.973354" transform="rotate(-0 232.406626 181.973354)">30</text>
-     </g>
-    </g>
-    <g id="text_5">
-     <text style="font-size: 14px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: middle" x="179.447969" y="199.164604" transform="rotate(-0 179.447969 199.164604)">Share of tissue mentions (%)</text>
-    </g>
-   </g>
-   <g id="matplotlib.axis_2">
-    <g id="ytick_1">
-     <g id="line2d_5"/>
-     <g id="text_6">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="12.75794" transform="rotate(-0 77.596177 12.75794)">Brain</text>
-     </g>
-    </g>
-    <g id="ytick_2">
-     <g id="line2d_6"/>
-     <g id="text_7">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="24.310915" transform="rotate(-0 77.596177 24.310915)">Culture</text>
-     </g>
-    </g>
-    <g id="ytick_3">
-     <g id="line2d_7"/>
-     <g id="text_8">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="35.86389" transform="rotate(-0 77.596177 35.86389)">Blood</text>
-     </g>
-    </g>
-    <g id="ytick_4">
-     <g id="line2d_8"/>
-     <g id="text_9">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="47.416864" transform="rotate(-0 77.596177 47.416864)">Tumor</text>
-     </g>
-    </g>
-    <g id="ytick_5">
-     <g id="line2d_9"/>
-     <g id="text_10">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="58.969839" transform="rotate(-0 77.596177 58.969839)">Lung</text>
-     </g>
-    </g>
-    <g id="ytick_6">
-     <g id="line2d_10"/>
-     <g id="text_11">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="70.522813" transform="rotate(-0 77.596177 70.522813)">Bone marrow</text>
-     </g>
-    </g>
-    <g id="ytick_7">
-     <g id="line2d_11"/>
-     <g id="text_12">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="82.075788" transform="rotate(-0 77.596177 82.075788)">Liver</text>
-     </g>
-    </g>
-    <g id="ytick_8">
-     <g id="line2d_12"/>
-     <g id="text_13">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="93.628763" transform="rotate(-0 77.596177 93.628763)">Heart</text>
-     </g>
-    </g>
-    <g id="ytick_9">
-     <g id="line2d_13"/>
-     <g id="text_14">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="105.181737" transform="rotate(-0 77.596177 105.181737)">Skin</text>
-     </g>
-    </g>
-    <g id="ytick_10">
-     <g id="line2d_14"/>
-     <g id="text_15">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="116.734712" transform="rotate(-0 77.596177 116.734712)">Pancreas</text>
-     </g>
-    </g>
-    <g id="ytick_11">
-     <g id="line2d_15"/>
-     <g id="text_16">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="128.287686" transform="rotate(-0 77.596177 128.287686)">Kidney</text>
-     </g>
-    </g>
-    <g id="ytick_12">
-     <g id="line2d_16"/>
-     <g id="text_17">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="139.840661" transform="rotate(-0 77.596177 139.840661)">Spleen</text>
-     </g>
-    </g>
-    <g id="ytick_13">
-     <g id="line2d_17"/>
-     <g id="text_18">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="151.393636" transform="rotate(-0 77.596177 151.393636)">Colon</text>
-     </g>
-    </g>
-    <g id="ytick_14">
-     <g id="line2d_18"/>
-     <g id="text_19">
-      <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: end" x="77.596177" y="162.94661" transform="rotate(-0 77.596177 162.94661)">Other (197 tissues)</text>
-     </g>
-    </g>
-   </g>
-   <g id="patch_3">
-    <path d="M 81.096177 5.195305 
-L 151.47313 5.195305 
-L 151.47313 13.513447 
-L 81.096177 13.513447 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #4472c4"/>
-   </g>
-   <g id="patch_4">
-    <path d="M 81.096177 16.74828 
-L 145.715016 16.74828 
-L 145.715016 25.066421 
-L 81.096177 25.066421 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #ed7d31"/>
-   </g>
-   <g id="patch_5">
-    <path d="M 81.096177 28.301254 
-L 129.293727 28.301254 
-L 129.293727 36.619396 
-L 81.096177 36.619396 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #4472c4"/>
-   </g>
-   <g id="patch_6">
-    <path d="M 81.096177 39.854229 
-L 109.460222 39.854229 
-L 109.460222 48.172371 
-L 81.096177 48.172371 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #4472c4"/>
-   </g>
-   <g id="patch_7">
-    <path d="M 81.096177 51.407204 
-L 103.702108 51.407204 
-L 103.702108 59.725345 
-L 81.096177 59.725345 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #4472c4"/>
-   </g>
-   <g id="patch_8">
-    <path d="M 81.096177 62.960178 
-L 97.73073 62.960178 
-L 97.73073 71.27832 
-L 81.096177 71.27832 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #4472c4"/>
-   </g>
-   <g id="patch_9">
-    <path d="M 81.096177 74.513153 
-L 97.090939 74.513153 
-L 97.090939 82.831294 
-L 81.096177 82.831294 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #4472c4"/>
-   </g>
-   <g id="patch_10">
-    <path d="M 81.096177 86.066127 
-L 96.451149 86.066127 
-L 96.451149 94.384269 
-L 81.096177 94.384269 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #4472c4"/>
-   </g>
-   <g id="patch_11">
-    <path d="M 81.096177 97.619102 
-L 96.237885 97.619102 
-L 96.237885 105.937244 
-L 81.096177 105.937244 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #4472c4"/>
-   </g>
-   <g id="patch_12">
-    <path d="M 81.096177 109.172077 
-L 94.531778 109.172077 
-L 94.531778 117.490218 
-L 81.096177 117.490218 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #4472c4"/>
-   </g>
-   <g id="patch_13">
-    <path d="M 81.096177 120.725051 
-L 93.46546 120.725051 
-L 93.46546 129.043193 
-L 81.096177 129.043193 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #4472c4"/>
-   </g>
-   <g id="patch_14">
-    <path d="M 81.096177 132.278026 
-L 93.252197 132.278026 
-L 93.252197 140.596167 
-L 81.096177 140.596167 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #4472c4"/>
-   </g>
-   <g id="patch_15">
-    <path d="M 81.096177 143.831 
-L 90.266508 143.831 
-L 90.266508 152.149142 
-L 81.096177 152.149142 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #4472c4"/>
-   </g>
-   <g id="patch_16">
-    <path d="M 81.096177 155.383975 
-L 241.043797 155.383975 
-L 241.043797 163.702117 
-L 81.096177 163.702117 
-z
-" clip-path="url(#pd18a21406c)" style="fill: #a5a5a5"/>
-   </g>
-   <g id="patch_17">
-    <path d="M 81.096177 165.897182 
-L 81.096177 3.00024 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="patch_18">
-    <path d="M 81.096177 165.897182 
-L 277.79976 165.897182 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="text_20">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="153.994971" y="11.782355" transform="rotate(-0 153.994971 11.782355)">14.0%</text>
-   </g>
-   <g id="text_21">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start; fill: #ed7d31" x="148.236857" y="23.335329" transform="rotate(-0 148.236857 23.335329)">12.8%  in vitro</text>
-   </g>
-   <g id="text_22">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="131.815568" y="34.888304" transform="rotate(-0 131.815568 34.888304)">9.6%</text>
-   </g>
-   <g id="text_23">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="111.982063" y="46.441278" transform="rotate(-0 111.982063 46.441278)">5.6%</text>
-   </g>
-   <g id="text_24">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="106.223949" y="57.994253" transform="rotate(-0 106.223949 57.994253)">4.5%</text>
-   </g>
-   <g id="text_25">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="100.252571" y="69.547228" transform="rotate(-0 100.252571 69.547228)">3.3%</text>
-   </g>
-   <g id="text_26">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="99.61278" y="81.100202" transform="rotate(-0 99.61278 81.100202)">3.2%</text>
-   </g>
-   <g id="text_27">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="98.97299" y="92.653177" transform="rotate(-0 98.97299 92.653177)">3.0%</text>
-   </g>
-   <g id="text_28">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="98.759726" y="104.206151" transform="rotate(-0 98.759726 104.206151)">3.0%</text>
-   </g>
-   <g id="text_29">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="97.053618" y="115.759126" transform="rotate(-0 97.053618 115.759126)">2.7%</text>
-   </g>
-   <g id="text_30">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="95.987301" y="127.312101" transform="rotate(-0 95.987301 127.312101)">2.5%</text>
-   </g>
-   <g id="text_31">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="95.774037" y="138.865075" transform="rotate(-0 95.774037 138.865075)">2.4%</text>
-   </g>
-   <g id="text_32">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="92.788348" y="150.41805" transform="rotate(-0 92.788348 150.41805)">1.8%</text>
-   </g>
-   <g id="text_33">
-    <text style="font-size: 9px; font-family: 'Georgia', 'DejaVu Serif', serif; text-anchor: start" x="243.565638" y="161.971024" transform="rotate(-0 243.565638 161.971024)">31.7%</text>
-   </g>
-  </g>
- </g>
- <defs>
-  <clipPath id="pd18a21406c">
-   <rect x="81.096177" y="3.00024" width="196.703583" height="162.896942"/>
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='280.80pt' height='205.20pt' viewBox='0 0 280.80 205.20'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHwyODAuODB8MC4wMHwyMDUuMjA='>
+    <rect x='0.00' y='0.00' width='280.80' height='205.20' />
   </clipPath>
- </defs>
+</defs>
+<g clip-path='url(#cpMC4wMHwyODAuODB8MC4wMHwyMDUuMjA=)'>
+<rect x='0.00' y='0.00' width='280.80' height='205.20' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpODAuOTd8MjcyLjgzfDMuOTl8MTY5LjIw'>
+    <rect x='80.97' y='3.99' width='191.86' height='165.22' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpODAuOTd8MjcyLjgzfDMuOTl8MTY5LjIw)'>
+<rect x='80.97' y='3.99' width='191.86' height='165.22' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='80.97' y='6.78' width='68.64' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='80.97' y='18.41' width='63.03' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #ED7D31;' />
+<rect x='80.97' y='30.05' width='47.01' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='80.97' y='41.68' width='27.67' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='80.97' y='53.32' width='22.05' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='80.97' y='64.95' width='16.22' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='80.97' y='76.59' width='15.60' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='80.97' y='88.22' width='14.98' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='80.97' y='99.86' width='14.77' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='80.97' y='111.49' width='13.10' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='80.97' y='123.13' width='12.06' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='80.97' y='134.76' width='11.86' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='80.97' y='146.40' width='8.94' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='80.97' y='158.03' width='156.01' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A5A5A5;' />
+<text x='152.07' y='14.08' style='font-size: 9.00px; font-family: "Georgia";' textLength='24.27px' lengthAdjust='spacingAndGlyphs'>14.0%</text>
+<text x='146.46' y='25.72' style='font-size: 9.00px;fill: #ED7D31; font-family: "Georgia";' textLength='57.28px' lengthAdjust='spacingAndGlyphs'>12.8%  in vitro</text>
+<text x='130.44' y='37.35' style='font-size: 9.00px; font-family: "Georgia";' textLength='19.97px' lengthAdjust='spacingAndGlyphs'>9.6%</text>
+<text x='111.10' y='48.99' style='font-size: 9.00px; font-family: "Georgia";' textLength='19.62px' lengthAdjust='spacingAndGlyphs'>5.6%</text>
+<text x='105.48' y='60.62' style='font-size: 9.00px; font-family: "Georgia";' textLength='19.61px' lengthAdjust='spacingAndGlyphs'>4.5%</text>
+<text x='99.65' y='72.26' style='font-size: 9.00px; font-family: "Georgia";' textLength='19.72px' lengthAdjust='spacingAndGlyphs'>3.3%</text>
+<text x='99.03' y='83.89' style='font-size: 9.00px; font-family: "Georgia";' textLength='19.78px' lengthAdjust='spacingAndGlyphs'>3.2%</text>
+<text x='98.41' y='95.53' style='font-size: 9.00px; font-family: "Georgia";' textLength='20.28px' lengthAdjust='spacingAndGlyphs'>3.0%</text>
+<text x='98.20' y='107.16' style='font-size: 9.00px; font-family: "Georgia";' textLength='20.28px' lengthAdjust='spacingAndGlyphs'>3.0%</text>
+<text x='96.53' y='118.80' style='font-size: 9.00px; font-family: "Georgia";' textLength='19.33px' lengthAdjust='spacingAndGlyphs'>2.7%</text>
+<text x='95.49' y='130.43' style='font-size: 9.00px; font-family: "Georgia";' textLength='19.56px' lengthAdjust='spacingAndGlyphs'>2.5%</text>
+<text x='95.29' y='142.07' style='font-size: 9.00px; font-family: "Georgia";' textLength='19.89px' lengthAdjust='spacingAndGlyphs'>2.4%</text>
+<text x='92.37' y='153.70' style='font-size: 9.00px; font-family: "Georgia";' textLength='19.02px' lengthAdjust='spacingAndGlyphs'>1.8%</text>
+<text x='239.44' y='165.34' style='font-size: 9.00px; font-family: "Georgia";' textLength='23.14px' lengthAdjust='spacingAndGlyphs'>31.7%</text>
+</g>
+<g clip-path='url(#cpMC4wMHwyODAuODB8MC4wMHwyMDUuMjA=)'>
+<polyline points='80.97,169.20 80.97,3.99 ' style='stroke-width: 0.85; stroke-linecap: square;' />
+<text x='78.58' y='165.34' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='74.59px' lengthAdjust='spacingAndGlyphs'>Other (197 tissues)</text>
+<text x='78.58' y='153.70' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='23.39px' lengthAdjust='spacingAndGlyphs'>Colon</text>
+<text x='78.58' y='142.07' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='26.77px' lengthAdjust='spacingAndGlyphs'>Spleen</text>
+<text x='78.58' y='130.43' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='28.16px' lengthAdjust='spacingAndGlyphs'>Kidney</text>
+<text x='78.58' y='118.80' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='35.88px' lengthAdjust='spacingAndGlyphs'>Pancreas</text>
+<text x='78.58' y='107.16' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='17.83px' lengthAdjust='spacingAndGlyphs'>Skin</text>
+<text x='78.58' y='95.53' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='23.00px' lengthAdjust='spacingAndGlyphs'>Heart</text>
+<text x='78.58' y='83.89' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='20.58px' lengthAdjust='spacingAndGlyphs'>Liver</text>
+<text x='78.58' y='72.26' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='53.91px' lengthAdjust='spacingAndGlyphs'>Bone marrow</text>
+<text x='78.58' y='60.62' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='20.50px' lengthAdjust='spacingAndGlyphs'>Lung</text>
+<text x='78.58' y='48.99' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='27.20px' lengthAdjust='spacingAndGlyphs'>Tumor</text>
+<text x='78.58' y='37.35' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='23.36px' lengthAdjust='spacingAndGlyphs'>Blood</text>
+<text x='78.58' y='25.72' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='29.84px' lengthAdjust='spacingAndGlyphs'>Culture</text>
+<text x='78.58' y='14.08' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='22.06px' lengthAdjust='spacingAndGlyphs'>Brain</text>
+<polyline points='80.97,169.20 272.83,169.20 ' style='stroke-width: 0.85; stroke-linecap: square;' />
+<polyline points='80.97,172.19 80.97,169.20 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
+<polyline points='130.16,172.19 130.16,169.20 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
+<polyline points='179.36,172.19 179.36,169.20 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
+<polyline points='228.55,172.19 228.55,169.20 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
+<text x='80.97' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='7.36px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='130.16' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='12.52px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='179.36' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='14.06px' lengthAdjust='spacingAndGlyphs'>20</text>
+<text x='228.55' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='13.98px' lengthAdjust='spacingAndGlyphs'>30</text>
+<text x='176.90' y='198.18' text-anchor='middle' style='font-size: 14.00px; font-family: "Georgia";' textLength='177.11px' lengthAdjust='spacingAndGlyphs'>Share of tissue mentions (%)</text>
+</g>
+</g>
 </svg>
