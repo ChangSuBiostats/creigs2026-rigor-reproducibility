@@ -362,13 +362,20 @@ Purpose: a bulk-style contrast for the single-cell volcano plot in Gibson
   number of cell-level discoveries (split 8), chosen by that rule and not by
   eye. 211 genes called against 0. Smallest p-value 1.5e-56 against 0.002.
 - `fig07d_3`: genes called in each of the 35 splits, both tests.
-- `fig07d_4`: the circled gene, HLA-C, by donor. It is the most significant
+- `fig07d_4`: the gene marked in both volcano plots, HLA-C, by donor. It is the most significant
   cell-level discovery not called at the donor level (cell-level p = 1.5e-56,
   donor-level p = 0.03, FDR 1.0). Donor means overlap between the two groups.
   HLA genes vary between people for genetic reasons, which makes the donor
   effect easy to explain.
 - In the shown split the largest -log10 P is 56, lower than the 100+ in
   Gibson's drawing; other splits reach 100 to 290.
+- The y-axis of both volcano plots stops at 20 (request: Chang, Nov 16). Only
+  HLA-C lies above it (56); it is drawn as a triangle on the top edge with its
+  value in the label. The scripts stop if any other gene is off the scale.
+- Squair et al. Fig. 4d is the same experiment on T cells of this dataset,
+  shown with edgeR on biological replicates against pseudo-replicates; their
+  Fig. 4e repeats the random split in 14 studies. Here the cell-level test is
+  the Wilcoxon test, because it is what the standard pipeline runs.
 - The count matrix (28 MB) is not committed. `data/get_data.R` downloads it
   and stops if its SHA-256 differs from the recorded value.
 - The pseudobulk volcano omits one gene for which DESeq2 returns no p-value.
