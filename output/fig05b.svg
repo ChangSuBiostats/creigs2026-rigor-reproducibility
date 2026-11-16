@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='280.80pt' height='205.20pt' viewBox='0 0 280.80 205.20'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='561.60pt' height='205.20pt' viewBox='0 0 561.60 205.20'>
 <g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
@@ -21,73 +21,196 @@
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
 <defs>
-  <clipPath id='cpMC4wMHwyODAuODB8MC4wMHwyMDUuMjA='>
-    <rect x='0.00' y='0.00' width='280.80' height='205.20' />
+  <clipPath id='cpMC4wMHw1NjEuNjB8MC4wMHwyMDUuMjA='>
+    <rect x='0.00' y='0.00' width='561.60' height='205.20' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMC4wMHwyODAuODB8MC4wMHwyMDUuMjA=)'>
-<rect x='0.000000000000032' y='0.00' width='280.80' height='205.20' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<g clip-path='url(#cpMC4wMHw1NjEuNjB8MC4wMHwyMDUuMjA=)'>
+<rect x='-0.000000000000096' y='-0.000000000000028' width='561.60' height='205.20' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
 </g>
 <defs>
-  <clipPath id='cpMTA3Ljg5fDI3Mi44M3wzLjk5fDE2OS4yMA=='>
-    <rect x='107.89' y='3.99' width='164.94' height='165.22' />
+  <clipPath id='cpNTkuMTV8MTE1LjU5fDMzLjQ0fDEzNi44Mw=='>
+    <rect x='59.15' y='33.44' width='56.44' height='103.39' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMTA3Ljg5fDI3Mi44M3wzLjk5fDE2OS4yMA==)'>
-<rect x='107.89' y='3.99' width='164.94' height='165.22' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<rect x='107.89' y='6.78' width='141.82' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='18.41' width='86.65' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='30.05' width='73.87' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='41.68' width='56.10' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='53.32' width='45.36' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='64.95' width='41.66' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='76.59' width='37.77' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='88.22' width='33.70' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='99.86' width='32.77' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='111.49' width='32.58' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='123.13' width='28.70' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='134.76' width='27.59' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='146.40' width='21.85' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<rect x='107.89' y='158.03' width='21.29' height='8.38' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
-<text x='251.77' y='14.08' style='font-size: 9.00px; font-family: "Georgia";' textLength='16.31px' lengthAdjust='spacingAndGlyphs'>41%</text>
-<text x='196.60' y='25.72' style='font-size: 9.00px; font-family: "Georgia";' textLength='17.14px' lengthAdjust='spacingAndGlyphs'>25%</text>
-<text x='183.82' y='37.35' style='font-size: 9.00px; font-family: "Georgia";' textLength='16.27px' lengthAdjust='spacingAndGlyphs'>21%</text>
-<text x='166.05' y='48.99' style='font-size: 9.00px; font-family: "Georgia";' textLength='16.33px' lengthAdjust='spacingAndGlyphs'>16%</text>
-<text x='155.31' y='60.62' style='font-size: 9.00px; font-family: "Georgia";' textLength='16.20px' lengthAdjust='spacingAndGlyphs'>13%</text>
-<text x='151.61' y='72.26' style='font-size: 9.00px; font-family: "Georgia";' textLength='16.27px' lengthAdjust='spacingAndGlyphs'>12%</text>
-<text x='147.72' y='83.89' style='font-size: 9.00px; font-family: "Georgia";' textLength='15.11px' lengthAdjust='spacingAndGlyphs'>11%</text>
-<text x='143.65' y='95.53' style='font-size: 9.00px; font-family: "Georgia";' textLength='16.77px' lengthAdjust='spacingAndGlyphs'>10%</text>
-<text x='142.72' y='107.16' style='font-size: 9.00px; font-family: "Georgia";' textLength='16.77px' lengthAdjust='spacingAndGlyphs'>10%</text>
-<text x='142.54' y='118.80' style='font-size: 9.00px; font-family: "Georgia";' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>9%</text>
-<text x='138.65' y='130.43' style='font-size: 9.00px; font-family: "Georgia";' textLength='12.72px' lengthAdjust='spacingAndGlyphs'>8%</text>
-<text x='137.54' y='142.07' style='font-size: 9.00px; font-family: "Georgia";' textLength='12.72px' lengthAdjust='spacingAndGlyphs'>8%</text>
-<text x='131.80' y='153.70' style='font-size: 9.00px; font-family: "Georgia";' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>6%</text>
-<text x='131.24' y='165.34' style='font-size: 9.00px; font-family: "Georgia";' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>6%</text>
+<g clip-path='url(#cpNTkuMTV8MTE1LjU5fDMzLjQ0fDEzNi44Mw==)'>
+<rect x='59.15' y='33.44' width='56.44' height='103.39' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='62.17' y='124.24' width='10.08' height='12.59' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='75.61' y='130.15' width='10.08' height='6.68' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='89.05' y='130.15' width='10.08' height='6.68' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='102.49' y='135.61' width='10.08' height='1.23' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<text x='67.21' y='122.03' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.52px' lengthAdjust='spacingAndGlyphs'>6</text>
+<text x='80.65' y='127.93' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.41px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='94.09' y='127.93' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.41px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='107.53' y='133.39' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='3.44px' lengthAdjust='spacingAndGlyphs'>1</text>
 </g>
-<g clip-path='url(#cpMC4wMHwyODAuODB8MC4wMHwyMDUuMjA=)'>
-<polyline points='107.89,169.20 107.89,3.99 ' style='stroke-width: 0.85; stroke-linecap: square;' />
-<text x='105.50' y='165.34' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='58.00px' lengthAdjust='spacingAndGlyphs'>Variable genes</text>
-<text x='105.50' y='153.70' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='43.14px' lengthAdjust='spacingAndGlyphs'>Interactive</text>
-<text x='105.50' y='142.07' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='37.94px' lengthAdjust='spacingAndGlyphs'>Gene sets</text>
-<text x='105.50' y='130.43' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='54.06px' lengthAdjust='spacingAndGlyphs'>Marker genes</text>
-<text x='105.50' y='118.80' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='57.58px' lengthAdjust='spacingAndGlyphs'>Normalization</text>
-<text x='105.50' y='107.16' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='90.59px' lengthAdjust='spacingAndGlyphs'>Differential expression</text>
-<text x='105.50' y='95.53' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='59.84px' lengthAdjust='spacingAndGlyphs'>Quality control</text>
-<text x='105.50' y='83.89' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='36.12px' lengthAdjust='spacingAndGlyphs'>Ordering</text>
-<text x='105.50' y='72.26' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='53.42px' lengthAdjust='spacingAndGlyphs'>Classification</text>
-<text x='105.50' y='60.62' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='59.38px' lengthAdjust='spacingAndGlyphs'>Gene networks</text>
-<text x='105.50' y='48.99' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='44.98px' lengthAdjust='spacingAndGlyphs'>Integration</text>
-<text x='105.50' y='37.35' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='41.09px' lengthAdjust='spacingAndGlyphs'>Clustering</text>
-<text x='105.50' y='25.72' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='101.52px' lengthAdjust='spacingAndGlyphs'>Dimensionality reduction</text>
-<text x='105.50' y='14.08' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='51.91px' lengthAdjust='spacingAndGlyphs'>Visualization</text>
-<polyline points='107.89,169.20 272.83,169.20 ' style='stroke-width: 0.85; stroke-linecap: square;' />
-<polyline points='107.89,172.19 107.89,169.20 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
-<polyline points='176.62,172.19 176.62,169.20 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
-<polyline points='245.34,172.19 245.34,169.20 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
-<text x='107.89' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='7.36px' lengthAdjust='spacingAndGlyphs'>0</text>
-<text x='176.62' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='14.06px' lengthAdjust='spacingAndGlyphs'>20</text>
-<text x='245.34' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='14.14px' lengthAdjust='spacingAndGlyphs'>40</text>
-<text x='190.36' y='198.18' text-anchor='middle' style='font-size: 14.00px; font-family: "Georgia";' textLength='59.11px' lengthAdjust='spacingAndGlyphs'>Tools (%)</text>
+<g clip-path='url(#cpMC4wMHw1NjEuNjB8MC4wMHwyMDUuMjA=)'>
+</g>
+<defs>
+  <clipPath id='cpMTIyLjU3fDIwNS44OXwzMy40NHwxMzYuODM='>
+    <rect x='122.57' y='33.44' width='83.32' height='103.39' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMTIyLjU3fDIwNS44OXwzMy40NHwxMzYuODM=)'>
+<rect x='122.57' y='33.44' width='83.32' height='103.39' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='125.59' y='103.07' width='10.08' height='33.76' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='139.03' y='116.55' width='10.08' height='20.28' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='152.47' y='117.22' width='10.08' height='19.61' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='165.91' y='124.24' width='10.08' height='12.59' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='179.35' y='129.14' width='10.08' height='7.69' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='192.78' y='132.49' width='10.08' height='4.34' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<text x='130.63' y='100.86' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='7.95px' lengthAdjust='spacingAndGlyphs'>16</text>
+<text x='144.07' y='114.34' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='8.34px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='157.51' y='115.01' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.52px' lengthAdjust='spacingAndGlyphs'>9</text>
+<text x='170.95' y='122.03' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.52px' lengthAdjust='spacingAndGlyphs'>6</text>
+<text x='184.39' y='126.93' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.52px' lengthAdjust='spacingAndGlyphs'>4</text>
+<text x='197.82' y='130.27' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.45px' lengthAdjust='spacingAndGlyphs'>2</text>
+</g>
+<g clip-path='url(#cpMC4wMHw1NjEuNjB8MC4wMHwyMDUuMjA=)'>
+</g>
+<defs>
+  <clipPath id='cpMjEyLjg2fDI4Mi43NHwzMy40NHwxMzYuODM='>
+    <rect x='212.86' y='33.44' width='69.88' height='103.39' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMjEyLjg2fDI4Mi43NHwzMy40NHwxMzYuODM=)'>
+<rect x='212.86' y='33.44' width='69.88' height='103.39' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='215.89' y='92.38' width='10.08' height='44.45' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='229.32' y='111.76' width='10.08' height='25.07' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='242.76' y='114.10' width='10.08' height='22.73' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='256.20' y='134.49' width='10.08' height='2.34' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='269.64' y='135.72' width='10.08' height='1.11' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<text x='220.93' y='90.17' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='7.89px' lengthAdjust='spacingAndGlyphs'>21</text>
+<text x='234.36' y='109.55' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='7.89px' lengthAdjust='spacingAndGlyphs'>12</text>
+<text x='247.80' y='111.89' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='6.88px' lengthAdjust='spacingAndGlyphs'>11</text>
+<text x='261.24' y='132.28' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='3.44px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='274.68' y='133.51' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='3.44px' lengthAdjust='spacingAndGlyphs'>1</text>
+</g>
+<g clip-path='url(#cpMC4wMHw1NjEuNjB8MC4wMHwyMDUuMjA=)'>
+</g>
+<defs>
+  <clipPath id='cpMjg5LjcyfDM1OS42MHwzMy40NHwxMzYuODM='>
+    <rect x='289.72' y='33.44' width='69.88' height='103.39' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMjg5LjcyfDM1OS42MHwzMy40NHwxMzYuODM=)'>
+<rect x='289.72' y='33.44' width='69.88' height='103.39' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='292.74' y='109.54' width='10.08' height='27.30' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='306.18' y='117.11' width='10.08' height='19.72' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='319.62' y='119.56' width='10.08' height='17.27' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='333.06' y='120.23' width='10.08' height='16.60' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='346.50' y='130.48' width='10.08' height='6.35' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<text x='297.78' y='107.32' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='7.84px' lengthAdjust='spacingAndGlyphs'>13</text>
+<text x='311.22' y='114.90' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='8.34px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='324.66' y='117.35' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.77px' lengthAdjust='spacingAndGlyphs'>8</text>
+<text x='338.10' y='118.02' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.77px' lengthAdjust='spacingAndGlyphs'>8</text>
+<text x='351.54' y='128.27' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.41px' lengthAdjust='spacingAndGlyphs'>3</text>
+</g>
+<g clip-path='url(#cpMC4wMHw1NjEuNjB8MC4wMHwyMDUuMjA=)'>
+</g>
+<defs>
+  <clipPath id='cpMzY2LjU3fDQyMy4wMnwzMy40NHwxMzYuODM='>
+    <rect x='366.57' y='33.44' width='56.44' height='103.39' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMzY2LjU3fDQyMy4wMnwzMy40NHwxMzYuODM=)'>
+<rect x='366.57' y='33.44' width='56.44' height='103.39' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='369.60' y='51.49' width='10.08' height='85.34' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='383.04' y='84.69' width='10.08' height='52.14' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='396.48' y='123.68' width='10.08' height='13.15' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='409.91' y='124.02' width='10.08' height='12.81' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<text x='374.64' y='49.28' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='7.95px' lengthAdjust='spacingAndGlyphs'>41</text>
+<text x='388.08' y='82.48' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='8.67px' lengthAdjust='spacingAndGlyphs'>25</text>
+<text x='401.52' y='121.47' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.52px' lengthAdjust='spacingAndGlyphs'>6</text>
+<text x='414.95' y='121.81' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.52px' lengthAdjust='spacingAndGlyphs'>6</text>
+</g>
+<g clip-path='url(#cpMC4wMHw1NjEuNjB8MC4wMHwyMDUuMjA=)'>
+</g>
+<defs>
+  <clipPath id='cpNDI5Ljk5fDU1My42M3wzMy40NHwxMzYuODM='>
+    <rect x='429.99' y='33.44' width='123.64' height='103.39' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNDI5Ljk5fDU1My42M3wzMy40NHwxMzYuODM=)'>
+<rect x='429.99' y='33.44' width='123.64' height='103.39' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<rect x='433.02' y='124.46' width='10.08' height='12.37' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='446.45' y='126.92' width='10.08' height='9.92' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='459.89' y='130.59' width='10.08' height='6.24' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='473.33' y='130.82' width='10.08' height='6.02' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='486.77' y='131.48' width='10.08' height='5.35' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='500.21' y='135.49' width='10.08' height='1.34' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='513.65' y='135.94' width='10.08' height='0.89' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='527.09' y='135.94' width='10.08' height='0.89' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<rect x='540.53' y='136.61' width='10.08' height='0.22' style='stroke-width: 1.16; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4472C4;' />
+<text x='438.06' y='122.25' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.52px' lengthAdjust='spacingAndGlyphs'>6</text>
+<text x='451.49' y='124.70' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.22px' lengthAdjust='spacingAndGlyphs'>5</text>
+<text x='464.93' y='128.38' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.41px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='478.37' y='128.60' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.41px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='491.81' y='129.27' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='4.41px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='505.25' y='133.28' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='3.44px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='518.69' y='133.73' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='8.58px' lengthAdjust='spacingAndGlyphs'>&lt;1</text>
+<text x='532.13' y='133.73' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='8.58px' lengthAdjust='spacingAndGlyphs'>&lt;1</text>
+<text x='545.57' y='134.40' text-anchor='middle' style='font-size: 8.00px; font-family: "Georgia";' textLength='8.58px' lengthAdjust='spacingAndGlyphs'>&lt;1</text>
+</g>
+<g clip-path='url(#cpMC4wMHw1NjEuNjB8MC4wMHwyMDUuMjA=)'>
+<text x='87.37' y='17.86' text-anchor='middle' style='font-size: 10.00px;fill: #44546A; font-family: "Georgia";' textLength='21.03px' lengthAdjust='spacingAndGlyphs'>Data</text>
+<text x='87.37' y='28.66' text-anchor='middle' style='font-size: 10.00px;fill: #44546A; font-family: "Georgia";' textLength='48.83px' lengthAdjust='spacingAndGlyphs'>acquisition</text>
+<text x='164.23' y='17.86' text-anchor='middle' style='font-size: 10.00px;fill: #44546A; font-family: "Georgia";' textLength='21.03px' lengthAdjust='spacingAndGlyphs'>Data</text>
+<text x='164.23' y='28.66' text-anchor='middle' style='font-size: 10.00px;fill: #44546A; font-family: "Georgia";' textLength='37.12px' lengthAdjust='spacingAndGlyphs'>cleaning</text>
+<text x='247.80' y='17.86' text-anchor='middle' style='font-size: 10.00px;fill: #44546A; font-family: "Georgia";' textLength='16.97px' lengthAdjust='spacingAndGlyphs'>Cell</text>
+<text x='247.80' y='28.66' text-anchor='middle' style='font-size: 10.00px;fill: #44546A; font-family: "Georgia";' textLength='50.64px' lengthAdjust='spacingAndGlyphs'>assignment</text>
+<text x='324.66' y='17.86' text-anchor='middle' style='font-size: 10.00px;fill: #44546A; font-family: "Georgia";' textLength='22.81px' lengthAdjust='spacingAndGlyphs'>Gene</text>
+<text x='324.66' y='28.66' text-anchor='middle' style='font-size: 10.00px;fill: #44546A; font-family: "Georgia";' textLength='59.28px' lengthAdjust='spacingAndGlyphs'>identification</text>
+<text x='394.80' y='17.86' text-anchor='middle' style='font-size: 10.00px;fill: #44546A; font-family: "Georgia";' textLength='37.67px' lengthAdjust='spacingAndGlyphs'>Multiple</text>
+<text x='394.80' y='28.66' text-anchor='middle' style='font-size: 10.00px;fill: #44546A; font-family: "Georgia";' textLength='30.08px' lengthAdjust='spacingAndGlyphs'>phases</text>
+<text x='491.81' y='28.66' text-anchor='middle' style='font-size: 10.00px;fill: #44546A; font-family: "Georgia";' textLength='25.64px' lengthAdjust='spacingAndGlyphs'>Other</text>
+<polyline points='59.15,136.83 115.59,136.83 ' style='stroke-width: 0.85; stroke-linecap: square;' />
+<text transform='translate(71.62,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='57.58px' lengthAdjust='spacingAndGlyphs'>Quantification</text>
+<text transform='translate(85.06,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='41.83px' lengthAdjust='spacingAndGlyphs'>Alignment</text>
+<text transform='translate(98.50,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='22.55px' lengthAdjust='spacingAndGlyphs'>UMIs</text>
+<text transform='translate(111.94,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='38.14px' lengthAdjust='spacingAndGlyphs'>Assembly</text>
+<polyline points='122.57,136.83 205.89,136.83 ' style='stroke-width: 0.85; stroke-linecap: square;' />
+<text transform='translate(135.04,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='44.98px' lengthAdjust='spacingAndGlyphs'>Integration</text>
+<text transform='translate(148.48,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='59.84px' lengthAdjust='spacingAndGlyphs'>Quality control</text>
+<text transform='translate(161.92,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='57.58px' lengthAdjust='spacingAndGlyphs'>Normalization</text>
+<text transform='translate(175.36,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='45.30px' lengthAdjust='spacingAndGlyphs'>Imputation</text>
+<text transform='translate(188.79,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='54.52px' lengthAdjust='spacingAndGlyphs'>Gene filtering</text>
+<text transform='translate(202.23,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='37.00px' lengthAdjust='spacingAndGlyphs'>Cell cycle</text>
+<polyline points='212.86,136.83 282.74,136.83 ' style='stroke-width: 0.85; stroke-linecap: square;' />
+<text transform='translate(225.33,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='41.09px' lengthAdjust='spacingAndGlyphs'>Clustering</text>
+<text transform='translate(238.77,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='53.42px' lengthAdjust='spacingAndGlyphs'>Classification</text>
+<text transform='translate(252.21,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='36.12px' lengthAdjust='spacingAndGlyphs'>Ordering</text>
+<text transform='translate(265.65,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='38.53px' lengthAdjust='spacingAndGlyphs'>Rare cells</text>
+<text transform='translate(279.09,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='40.08px' lengthAdjust='spacingAndGlyphs'>Stem cells</text>
+<polyline points='289.72,136.83 359.60,136.83 ' style='stroke-width: 0.85; stroke-linecap: square;' />
+<text transform='translate(302.19,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='59.38px' lengthAdjust='spacingAndGlyphs'>Gene networks</text>
+<text transform='translate(315.63,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='62.47px' lengthAdjust='spacingAndGlyphs'>Diff. expression</text>
+<text transform='translate(329.07,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='54.06px' lengthAdjust='spacingAndGlyphs'>Marker genes</text>
+<text transform='translate(342.51,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='37.94px' lengthAdjust='spacingAndGlyphs'>Gene sets</text>
+<text transform='translate(355.95,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='79.48px' lengthAdjust='spacingAndGlyphs'>Expression patterns</text>
+<polyline points='366.57,136.83 423.02,136.83 ' style='stroke-width: 0.85; stroke-linecap: square;' />
+<text transform='translate(379.05,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='51.91px' lengthAdjust='spacingAndGlyphs'>Visualization</text>
+<text transform='translate(392.49,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='60.28px' lengthAdjust='spacingAndGlyphs'>Dim. reduction</text>
+<text transform='translate(405.92,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='43.14px' lengthAdjust='spacingAndGlyphs'>Interactive</text>
+<text transform='translate(419.36,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='58.00px' lengthAdjust='spacingAndGlyphs'>Variable genes</text>
+<polyline points='429.99,136.83 553.63,136.83 ' style='stroke-width: 0.85; stroke-linecap: square;' />
+<text transform='translate(442.46,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='43.81px' lengthAdjust='spacingAndGlyphs'>Simulation</text>
+<text transform='translate(455.90,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='33.70px' lengthAdjust='spacingAndGlyphs'>Variants</text>
+<text transform='translate(469.34,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='54.88px' lengthAdjust='spacingAndGlyphs'>Perturbations</text>
+<text transform='translate(482.78,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='34.17px' lengthAdjust='spacingAndGlyphs'>Immune</text>
+<text transform='translate(496.22,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='47.19px' lengthAdjust='spacingAndGlyphs'>Alt. splicing</text>
+<text transform='translate(509.66,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='62.83px' lengthAdjust='spacingAndGlyphs'>Transformation</text>
+<text transform='translate(523.10,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='54.39px' lengthAdjust='spacingAndGlyphs'>Allele specific</text>
+<text transform='translate(536.54,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='35.67px' lengthAdjust='spacingAndGlyphs'>Modality</text>
+<text transform='translate(549.98,143.63) rotate(-45)' text-anchor='end' style='font-size: 9.00px; font-family: "Georgia";' textLength='45.36px' lengthAdjust='spacingAndGlyphs'>Haplotypes</text>
+<polyline points='59.15,136.83 59.15,33.44 ' style='stroke-width: 0.85; stroke-linecap: square;' />
+<text x='53.77' y='140.99' text-anchor='end' style='font-size: 12.00px; font-family: "Georgia";' textLength='7.36px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='53.77' y='99.63' text-anchor='end' style='font-size: 12.00px; font-family: "Georgia";' textLength='14.06px' lengthAdjust='spacingAndGlyphs'>20</text>
+<text x='53.77' y='58.28' text-anchor='end' style='font-size: 12.00px; font-family: "Georgia";' textLength='14.14px' lengthAdjust='spacingAndGlyphs'>40</text>
+<polyline points='56.16,136.83 59.15,136.83 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
+<polyline points='56.16,95.48 59.15,95.48 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
+<polyline points='56.16,54.12 59.15,54.12 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
+<text transform='translate(33.61,85.14) rotate(-90)' text-anchor='middle' style='font-size: 14.00px; font-family: "Georgia";' textLength='59.11px' lengthAdjust='spacingAndGlyphs'>Tools (%)</text>
 </g>
 </g>
 </svg>

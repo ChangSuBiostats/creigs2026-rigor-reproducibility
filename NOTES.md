@@ -225,12 +225,22 @@ database has grown by about 70% since, so the paper figure is out of date.
 
 ### fig05b (tools per analysis category)
 
-- Percentage of all 1,856 tools assigned to each of the 14 most common
-  categories; all 33 are in `data/processed/fig05b_tools_per_category.csv`.
+- Same content as Fig. 1D of the paper, updated to the current database and
+  laid out horizontally (request: Chang, Nov 16): percentage of all 1,856 tools
+  assigned to each of the 33 categories, grouped by workflow phase from left
+  to right. The table is `data/processed/fig05b_tools_per_category.csv`.
+- Size is 7.8 x 2.85 in, not one of the two README sizes, so that it sits
+  beside the half-slide `fig05a` at the same height.
+- The database only numbers the phases (Phase 1 to 4, Multiple, Other). The
+  names (data acquisition, data cleaning, cell assignment, gene
+  identification) are taken from the paper's figure.
 - A tool can be in several categories (4,623 assignments), so the percentages
   do not sum to 100.
 - Most common: visualization 41%, dimensionality reduction 25%, clustering
   21%, integration 16%.
-- Category names are the database's, with spaces added and US spelling.
-  "Ordering" is the database's name for trajectory or pseudotime inference.
-- Style deviation: category names and value labels are 9 pt, as in `fig02b`.
+- Category names are the database's, with spaces added and US spelling; three
+  are abbreviated as in the paper (Dim., Diff., Alt.). "Ordering" is the
+  database's name for trajectory or pseudotime inference.
+- Value labels are whole percentages; "<1" marks categories under 0.5%
+  (allele specific 8 tools, modality 8, haplotypes 2).
+- Style deviation: category names are 9 pt and value labels 8 pt.

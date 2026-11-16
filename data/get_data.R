@@ -125,7 +125,8 @@ if (needed("pubmed_counts.tsv")) {
 # --- 4. scRNA-tools database (Zappia & Theis 2021) ---------------------------
 scrna_tools <- c(
   scrna_tools.tsv = "https://raw.githubusercontent.com/scRNA-tools/scRNA-tools/main/database/tools.tsv",
-  scrna_tools_categories.tsv = "https://raw.githubusercontent.com/scRNA-tools/scRNA-tools/main/database/categories-idx.tsv"
+  scrna_tools_categories.tsv = "https://raw.githubusercontent.com/scRNA-tools/scRNA-tools/main/database/categories-idx.tsv",
+  scrna_tools_phases.tsv = "https://raw.githubusercontent.com/scRNA-tools/scRNA-tools/main/database/categories.tsv"
 )
 for (name in names(scrna_tools)) {
   if (needed(name)) {
