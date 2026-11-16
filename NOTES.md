@@ -168,3 +168,33 @@ Share of human collections, by publication period:
   measure of technical heterogeneity within a study, not strictly of the
   number of platforms.
 - Style deviation: period labels are 8 pt, not 12 pt, to fit six labels.
+
+## Slide 4 (no generated figures)
+
+Decision (Chang, Nov 16): the slide uses screenshots of the official tutorial
+outputs, not figures built here. Copies are in `reference/`:
+
+- `UMAP_seurat_pbmc3k.png`: Seurat PBMC 3k tutorial,
+  https://satijalab.org/seurat/articles/pbmc3k_tutorial (page compiled
+  2026-11-06 with Seurat 6.0.0).
+- `UMAP_scanpy_pbmc3k.png`: Scanpy PBMC 3k tutorial,
+  https://scanpy-tutorials.readthedocs.io/en/multiomics/pbmc3k.html (an old
+  branch of the docs, run with scanpy 1.4.5).
+
+Both tutorials run the same steps on the same data and end with the same 2,638
+cells and 13,714 genes, but the UMAPs look different and the cluster counts
+differ (9 vs. 8). The difference is kept on purpose as a lead-in to the later
+slides. Reasons read from the two pages:
+
+- Variable genes: top 2,000 by `vst` (Seurat) vs. dispersion thresholds giving
+  1,838 (Scanpy).
+- Scanpy regresses out total counts and percent mitochondrial; Seurat does not.
+- PCs used for the neighbor graph: 10 (Seurat) vs. 40 (Scanpy).
+- Clustering: Louvain at resolution 0.5 (Seurat) vs. Leiden at its default
+  resolution (Scanpy). Seurat splits CD4 T cells into naive and memory.
+- Neighbors: 10 in Scanpy; Seurat uses its defaults.
+- UMAP layout: different implementations, defaults and seeds, so position,
+  orientation and spacing of the islands are not comparable.
+
+The biology agrees: both show an isolated B-cell island, a monocyte group with
+dendritic cells and platelets, and a T-to-NK continuum.
