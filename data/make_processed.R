@@ -145,3 +145,17 @@ pubmed <- read_tsv(file.path(raw, "pubmed_counts.tsv"), col_types = "iic") |>
   select(year, count)
 write_csv(pubmed, file.path(processed, "pubmed_counts.csv"))
 message("pubmed_counts.csv: ", min(pubmed$year), " to ", max(pubmed$year))
+
+# --- scRNA-tools database ----------------------------------------------------
+tools <- read_tsv(file.path(raw, "scrna_tools.tsv"), col_types = cols(.default = col_character()),
+                  quote = "") |>
+  transmute(tool = Tool, platform = Platform, added = ymd(Added)) |>
+  arrange(added, tool)
+tool_categories <- read_tsv(file.path(raw, "scrna_tools_categories.tsv"), col_types = "cc") |>
+  rename(tool = Tool, category = Category)
+stopifnot(!anyNA(tools$added), !anyDuplicated(tools$tool), all(tool_categories$tool %in% tools$tool))
+
+write_csv(tools, file.path(processed, "scrna_tools.csv"))
+write_csv(tool_categories, file.path(processed, "scrna_tools_categories.csv"))
+message("scrna_tools.csv: ", nrow(tools), " tools added ", min(tools$added), " to ",
+        max(tools$added), "; ", n_distinct(tool_categories$category), " categories")

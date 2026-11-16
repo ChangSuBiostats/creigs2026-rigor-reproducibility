@@ -121,3 +121,21 @@ if (needed("pubmed_counts.tsv")) {
     esearch
   )
 }
+
+# --- 4. scRNA-tools database (Zappia & Theis 2021) ---------------------------
+scrna_tools <- c(
+  scrna_tools.tsv = "https://raw.githubusercontent.com/scRNA-tools/scRNA-tools/main/database/tools.tsv",
+  scrna_tools_categories.tsv = "https://raw.githubusercontent.com/scRNA-tools/scRNA-tools/main/database/categories-idx.tsv"
+)
+for (name in names(scrna_tools)) {
+  if (needed(name)) {
+    curl_get(scrna_tools[[name]], file.path(raw_dir, name))
+    log_source(
+      name,
+      paste("scRNA-tools database, github.com/scRNA-tools/scRNA-tools, MIT licence (Zappia &",
+            "Theis 2021, Genome Biology 22:301, doi:10.1186/s13059-021-02519-4). The site",
+            "states the database has been in low-maintenance mode since May 2024."),
+      scrna_tools[[name]]
+    )
+  }
+}

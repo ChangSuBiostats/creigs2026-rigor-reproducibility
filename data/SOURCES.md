@@ -30,3 +30,17 @@ The newest entry for a file describes the copy currently in `data/raw/`.
 - Accessed: 2026-11-16 14:51 UTC
 - SHA-256: 950c1877ea7343af8ed410840451bd5d45d11df42d60d6739e97b77f3efd0be3
 - Size: 4025 bytes
+
+## scrna_tools.tsv
+- Description: scRNA-tools database, github.com/scRNA-tools/scRNA-tools, MIT licence (Zappia & Theis 2021, Genome Biology 22:301, doi:10.1186/s13059-021-02519-4). The site states the database has been in low-maintenance mode since May 2024.
+- URL: https://raw.githubusercontent.com/scRNA-tools/scRNA-tools/main/database/tools.tsv
+- Accessed: 2026-11-16 16:28 UTC
+- SHA-256: d2860435cae99621b9debd4a2099818885f2889d19402140e8f28efb2647e7d0
+- Size: 377249 bytes
+
+## scrna_tools_categories.tsv
+- Description: scRNA-tools database, github.com/scRNA-tools/scRNA-tools, MIT licence (Zappia & Theis 2021, Genome Biology 22:301, doi:10.1186/s13059-021-02519-4). The site states the database has been in low-maintenance mode since May 2024.
+- URL: https://raw.githubusercontent.com/scRNA-tools/scRNA-tools/main/database/categories-idx.tsv
+- Accessed: 2026-11-16 16:28 UTC
+- SHA-256: c62f9a4f4cf35cb3e2204cc1f773fc40035560fc97e692683b236dd2a4f95d5d
+- Size: 103370 bytes
