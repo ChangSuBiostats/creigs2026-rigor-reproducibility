@@ -8,9 +8,11 @@
 # source URL, access date (UTC) and SHA-256 checksum. Files in data/raw/ are
 # never edited by hand.
 #
-# All three sources are live, so a re-download can differ from the committed
+# Sources 1 to 4 are live, so a re-download can differ from the committed
 # snapshot. Figures are built from the committed snapshot; use --refresh only
-# when you intend to update the figures to a newer version.
+# when you intend to update the figures to a newer version. Source 5 (GEO) is
+# an archived, fixed record; its large count matrix is not committed (see
+# .gitignore) and is checked against a recorded checksum after download.
 # No randomness, so no seed.
 
 raw_dir <- file.path("data", "raw")
@@ -140,3 +142,30 @@ for (name in names(scrna_tools)) {
     )
   }
 }
+
+# --- 5. Kang et al. 2018 PBMC data, control sample (GEO GSE96583, batch 2) ---
+# Blood cells from eight lupus patients, pooled in one 10x run and assigned to
+# donors by genotype. Only the untreated (control) sample is used: fig07d
+# compares random groups of these donors, where no true difference exists.
+geo <- "https://ftp.ncbi.nlm.nih.gov/geo"
+kang <- c(
+  kang_ctrl_counts.mtx.gz = paste0(geo, "/samples/GSM2560nnn/GSM2560248/suppl/GSM2560248_2.1.mtx.gz"),
+  kang_ctrl_barcodes.tsv.gz = paste0(geo, "/samples/GSM2560nnn/GSM2560248/suppl/GSM2560248_barcodes.tsv.gz"),
+  kang_genes.tsv.gz = paste0(geo, "/series/GSE96nnn/GSE96583/suppl/GSE96583_batch2.genes.tsv.gz"),
+  kang_cell_metadata.tsv.gz = paste0(geo, "/series/GSE96nnn/GSE96583/suppl/GSE96583_batch2.total.tsne.df.tsv.gz")
+)
+# The count matrix is not in git, so pin it here.
+kang_counts_sha256 <- "32add28a0b3397d9ef3f220b7a6a55e98e60fe7b66fe48d0986d634df8ca0013"
+for (name in names(kang)) {
+  if (needed(name)) {
+    curl_get(kang[[name]], file.path(raw_dir, name))
+    log_source(
+      name,
+      paste("Kang et al. 2018, Nature Biotechnology 36:89-94, doi:10.1038/nbt.4042; GEO series",
+            "GSE96583, batch 2 (control sample GSM2560248). Renamed from",
+            paste0(basename(kang[[name]]), ".")),
+      kang[[name]]
+    )
+  }
+}
+stopifnot(unname(tools::sha256sum(file.path(raw_dir, "kang_ctrl_counts.mtx.gz"))) == kang_counts_sha256)

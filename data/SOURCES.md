@@ -51,3 +51,31 @@ The newest entry for a file describes the copy currently in `data/raw/`.
 - Accessed: 2026-11-16 16:35 UTC
 - SHA-256: b6f464a2da41179b64b18322a42921c2608125345784ee99b57ab3414c85c407
 - Size: 2492 bytes
+
+## kang_ctrl_counts.mtx.gz
+- Description: Kang et al. 2018, Nature Biotechnology 36:89-94, doi:10.1038/nbt.4042; GEO series GSE96583, batch 2 (control sample GSM2560248). Renamed from GSM2560248_2.1.mtx.gz.
+- URL: https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2560nnn/GSM2560248/suppl/GSM2560248_2.1.mtx.gz
+- Accessed: 2026-11-16 20:58 UTC
+- SHA-256: 32add28a0b3397d9ef3f220b7a6a55e98e60fe7b66fe48d0986d634df8ca0013
+- Size: 28545918 bytes
+
+## kang_ctrl_barcodes.tsv.gz
+- Description: Kang et al. 2018, Nature Biotechnology 36:89-94, doi:10.1038/nbt.4042; GEO series GSE96583, batch 2 (control sample GSM2560248). Renamed from GSM2560248_barcodes.tsv.gz.
+- URL: https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2560nnn/GSM2560248/suppl/GSM2560248_barcodes.tsv.gz
+- Accessed: 2026-11-16 20:58 UTC
+- SHA-256: d58d8d55cbe4a12757207784b3bc9227bf200c9100ca15131176e9f8159c955e
+- Size: 52904 bytes
+
+## kang_genes.tsv.gz
+- Description: Kang et al. 2018, Nature Biotechnology 36:89-94, doi:10.1038/nbt.4042; GEO series GSE96583, batch 2 (control sample GSM2560248). Renamed from GSE96583_batch2.genes.tsv.gz.
+- URL: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE96nnn/GSE96583/suppl/GSE96583_batch2.genes.tsv.gz
+- Accessed: 2026-11-16 20:58 UTC
+- SHA-256: 93aa4e9b530ef9d6411ca129b416324c5cc1cc5a01a1fa6ed4f4a845480ed3ca
+- Size: 277054 bytes
+
+## kang_cell_metadata.tsv.gz
+- Description: Kang et al. 2018, Nature Biotechnology 36:89-94, doi:10.1038/nbt.4042; GEO series GSE96583, batch 2 (control sample GSM2560248). Renamed from GSE96583_batch2.total.tsne.df.tsv.gz.
+- URL: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE96nnn/GSE96583/suppl/GSE96583_batch2.total.tsne.df.tsv.gz
+- Accessed: 2026-11-16 20:58 UTC
+- SHA-256: 1d57e72e92ca8695250e88cc0f1c3fa8c0be1175d974f8b427c58f1274dc6c09
+- Size: 756342 bytes

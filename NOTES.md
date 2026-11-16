@@ -318,3 +318,57 @@ References:
   16:7436.
 - Zimmerman KD, Espeland MA, Langefeld CD (2021). A practical solution to
   pseudoreplication bias in single-cell studies. Nature Communications 12:738.
+
+## Example 3: pseudo-replication in differential expression (fig07d)
+
+Purpose: a bulk-style contrast for the single-cell volcano plot in Gibson
+(2022) Fig. 1A, and an R version of the null experiment in Squair et al.
+(2021). Request: Chang, Nov 16.
+
+- Gibson's Fig. 1A is a "stylized volcano plot typical of single cell
+  results" (his caption): a drawing, not data. The paper is CC BY 4.0, so the
+  panel can be shown with credit.
+- Instead of borrowing a bulk volcano plot from an unrelated study, the
+  contrast is made from one real dataset analyzed two ways, so that only the
+  unit of analysis differs.
+
+### Data and design (data/make_null_de.R)
+
+- Kang et al. 2018 (GEO GSE96583, batch 2): blood cells of eight lupus
+  patients. Only the untreated control sample is used. Squair et al. ran
+  their random-split experiment on these same control samples.
+- Cells: 5,161 singlet CD4 T cells, the most abundant cell type (144 to 1,182
+  per donor). Genes: 1,106 detected in at least 10% of these cells.
+- All 35 ways to split the eight donors four against four are tested. No
+  treatment separates the groups, so every gene called is a false discovery.
+- Cell level: Wilcoxon rank-sum test on log-normalized counts (Seurat's
+  default). Donor level: counts summed per donor, DESeq2. Both at a
+  Benjamini-Hochberg false discovery rate of 5%.
+- Results over the 35 splits: cell level, median 211 genes called (range 81
+  to 476; 7% to 43% of the genes tested); donor level, median 0 (range 0 to
+  51; 27 of 35 splits give 0). Smallest cell-level p-value per split: median
+  about 1e-100, range 1e-36 to 1e-290.
+- Seurat reports Bonferroni-adjusted p-values by default. With that stricter
+  correction the cell-level test still calls a median of 87 genes
+  (`n_de_cell_bonferroni` in `kang_null_splits.csv`).
+- A few splits give donor-level discoveries (up to 51). These were not
+  investigated; real differences between the donors of a split (for example
+  sex) would produce them.
+
+### Figures
+
+- `fig07d_1`, `fig07d_2`: volcano plots of the same split, cell level and
+  donor level, on the same axes. The split shown is the one with the median
+  number of cell-level discoveries (split 8), chosen by that rule and not by
+  eye. 211 genes called against 0. Smallest p-value 1.5e-56 against 0.002.
+- `fig07d_3`: genes called in each of the 35 splits, both tests.
+- `fig07d_4`: the circled gene, HLA-C, by donor. It is the most significant
+  cell-level discovery not called at the donor level (cell-level p = 1.5e-56,
+  donor-level p = 0.03, FDR 1.0). Donor means overlap between the two groups.
+  HLA genes vary between people for genetic reasons, which makes the donor
+  effect easy to explain.
+- In the shown split the largest -log10 P is 56, lower than the 100+ in
+  Gibson's drawing; other splits reach 100 to 290.
+- The count matrix (28 MB) is not committed. `data/get_data.R` downloads it
+  and stops if its SHA-256 differs from the recorded value.
+- The pseudobulk volcano omits one gene for which DESeq2 returns no p-value.
