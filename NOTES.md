@@ -216,10 +216,12 @@ database has grown by about 70% since, so the paper figure is out of date.
   the tool's release date. The database started in September 2016.
 - Counts: 164 (start of 2018), 540 (start of 2020), 1,087 (when the paper was
   published, 2021-10-29), 1,786 (end of May 2024), 1,856 (now).
-- **The flat part after mid-2024 is a curation effect.** The site states the
-  database has been in low-maintenance mode since May 2024; only 70 tools have
-  been added since. The curve does not show that tool development stopped, and
-  1,856 is a lower bound. This needs saying on the slide.
+- **The x-axis stops at the end of May 2024** (decision: Chang, Nov 16). The
+  site states the database has been in low-maintenance mode since May 2024, and
+  only 70 tools have been added since. Showing that flat tail would suggest
+  tool development stopped, which the data cannot support. The figure shows
+  1,786 tools by May 2024; the cut-off and the reason are stated on the slide.
+  `fig05b` still uses all 1,856 tools, since it is not a time series.
 
 ### fig05b (tools per analysis category)
 
