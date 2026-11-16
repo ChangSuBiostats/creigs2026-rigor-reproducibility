@@ -339,21 +339,28 @@ Purpose: a bulk-style contrast for the single-cell volcano plot in Gibson
   their random-split experiment on these same control samples.
 - Cells: 5,161 singlet CD4 T cells, the most abundant cell type (144 to 1,182
   per donor). Genes: 1,106 detected in at least 10% of these cells.
+- Normalization: log(1 + counts per 10,000), with each cell's total taken
+  over all genes. (Until Nov 16 the total was taken over the 1,106 tested
+  genes only, which is not what the standard pipeline does. A consistency
+  check added with the rare-gene analysis caught it. The fix moved the
+  numbers slightly and changed which split is the median one, so figures
+  made before that commit show a different split: 211 against 0, example
+  gene HLA-C.)
 - All 35 ways to split the eight donors four against four are tested. No
   treatment separates the groups, so every gene called is a false discovery.
 - Cell level: Wilcoxon rank-sum test on log-normalized counts (Seurat's
-  default). Donor level: counts summed per donor, DESeq2. Both at a
+  default). Individual level: counts summed per donor, DESeq2. Both at a
   Benjamini-Hochberg false discovery rate of 5%.
-- Results over the 35 splits: cell level, median 211 genes called (range 81
-  to 476; 7% to 43% of the genes tested); donor level, median 0 (range 0 to
-  51; 27 of 35 splits give 0). Smallest cell-level p-value per split: median
-  about 1e-100, range 1e-36 to 1e-290.
+- Results over the 35 splits: cell level, median 212 genes called (range 81
+  to 464; 7% to 42% of the genes tested); individual level, median 0 (range 0
+  to 51; 27 of 35 splits give 0). Smallest cell-level p-value per split:
+  median about 1e-97, range 1e-38 to 1e-293.
 - Seurat reports Bonferroni-adjusted p-values by default. With that stricter
-  correction the cell-level test still calls a median of 87 genes
+  correction the cell-level test still calls a median of 86 genes
   (`n_de_cell_bonferroni` in `kang_null_splits.csv`).
-- A few splits give donor-level discoveries (up to 51). These were not
+- Some splits give individual-level discoveries (up to 51). These were not
   investigated; real differences between the donors of a split (for example
-  sex) would produce them.
+  sex, or HLA type) would produce them.
 
 ### Terminology (decision: Chang, Nov 16)
 
@@ -369,32 +376,45 @@ Purpose: a bulk-style contrast for the single-cell volcano plot in Gibson
 
 ### Figures
 
-- `fig07d_1`, `fig07d_2`: volcano plots of the same split, cell level and
-  donor level, on the same axes. The split shown is the one with the median
-  number of cell-level discoveries (split 8), chosen by that rule and not by
-  eye. 211 genes called against 0. Smallest p-value 1.5e-56 against 0.002.
+- The split shown in the per-split figures is the one with the median number
+  of cell-level discoveries (split 20), chosen by that rule and not by eye.
+  The rule was fixed before the results were seen and was kept when the
+  normalization fix changed which split it selects.
+- `fig07d_1`, `fig07d_2`: volcano plots of that split, cell level and
+  individual level, on the same axes. 212 genes called against 7. Smallest
+  p-value 1.6e-145 against 1.7e-8.
+- The 7 individual-level genes include HLA-C, the top gene of both tests
+  (individual-level FDR 0.001): the two groups of people do differ in it.
+  With four people per group, a few real differences between the groups are
+  expected; they are differences between these people, not a treatment effect.
+- The y-axis of both volcano plots stops at 50, the lowest multiple of 10
+  that leaves at most one gene off the scale. That gene, HLA-C (145), is
+  drawn as a triangle on the top edge with its value in the label. Chang
+  asked for a cropped axis on Nov 16 (then 20, for the earlier split).
 - `fig07d_3`: genes called in each of the 35 splits, both tests.
-- `fig07d_4`: the gene marked in both volcano plots, HLA-C, by donor. It is the most significant
-  cell-level discovery not called at the donor level (cell-level p = 1.5e-56,
-  donor-level p = 0.03, FDR 1.0). Donor means overlap between the two groups.
-  HLA genes vary between people for genetic reasons, which makes the donor
-  effect easy to explain.
-- In the shown split the largest -log10 P is 56, lower than the 100+ in
-  Gibson's drawing; other splits reach 100 to 290.
-- Gibson's drawing is a "double volcano": an inner burst (small fold change,
-  extreme significance) and an outer burst (larger fold change, lower
-  significance). `fig07d_1` shows only the inner one. A check outside the repo
-  (Nov 16) showed why: the outer burst is made of genes detected in 1 to 10%
-  of cells and appears only when the fold change uses a small pseudocount.
-  The figure follows Seurat's defaults (genes in at least 10% of cells,
-  pseudocount 1), which remove it. Kept as is.
-- The y-axis of both volcano plots stops at 20 (request: Chang, Nov 16). Only
-  HLA-C lies above it (56); it is drawn as a triangle on the top edge with its
-  value in the label. The scripts stop if any other gene is off the scale.
+- `fig07d_4`: GAPDH by individual. It is the most significant cell-level
+  discovery not called at the individual level (cell-level p = 1.2e-48;
+  individual-level p = 0.015, FDR 1.0), and is circled in both volcano plots.
+  Three of the four people in group B have lower levels; the fourth is in the
+  range of group A. Many cells have no GAPDH reads (points at 0).
+- `fig07d_5`, `fig07d_6`: Gibson's drawing is a "double volcano": an inner
+  burst (small fold change, extreme significance) and an outer burst (larger
+  fold change, lower significance). `fig07d_1` shows only the inner one,
+  because it follows Seurat's defaults: genes in at least 10% of cells, and a
+  fold change that adds 1 to each mean. These two figures redo the cell-level
+  test of the same split for all 6,146 genes detected in at least 1% of cells,
+  with the fold change as the plain ratio of means. `fig07d_5` shows the 1,106
+  well-detected genes; `fig07d_6` adds the 5,040 rarely detected ones in
+  orange, on identical axes so the two can be superimposed (request: Chang,
+  Nov 16). The 1% threshold is a round number chosen for illustration.
+  At a 5% false discovery rate over all 6,146 genes, 162 well-detected and
+  149 rarely detected genes are called. `figures/volcano_double.R` holds the
+  shared plotting code.
 - Squair et al. Fig. 4d is the same experiment on T cells of this dataset,
   shown with edgeR on biological replicates against pseudo-replicates; their
   Fig. 4e repeats the random split in 14 studies. Here the cell-level test is
   the Wilcoxon test, because it is what the standard pipeline runs.
 - The count matrix (28 MB) is not committed. `data/get_data.R` downloads it
   and stops if its SHA-256 differs from the recorded value.
-- The pseudobulk volcano omits one gene for which DESeq2 returns no p-value.
+- The individual-level volcano omits two genes for which DESeq2 returns no
+  p-value.

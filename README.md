@@ -78,7 +78,7 @@ single-cell RNA-seq analysis landscape*, Genome Biology; data believed to be at
 github.com/scRNA-tools/scRNA-tools) for `fig05a`: cumulative tools over time, and
 `fig05b`: tools per analysis category.
 
-### Example 3, differential expression: `fig07d_1` to `fig07d_4` (done; see `NOTES.md`)
+### Example 3, differential expression: `fig07d_1` to `fig07d_6` (done; see `NOTES.md`)
 Request (Chang, Nov 16): a bulk-style contrast to the single-cell volcano plot in Gibson
 (2022) Fig. 1A, and the null experiment of Squair et al. (2021), in R. Built from the
 untreated donors of Kang et al. (2018): `data/make_null_de.R`, then four figures.

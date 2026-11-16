@@ -26,6 +26,9 @@
 #                                               split shown in the volcano plots
 #         data/processed/kang_null_example.csv  one row per cell, for the
 #                                               example gene of fig07d_4
+#         data/processed/kang_null_rare_genes.csv  cell-level test of the shown
+#                                               split, extended to rarely
+#                                               detected genes (fig07d_5, fig07d_6)
 #
 # The split shown is the one with the median number of cell-level discoveries
 # among the 35 (a typical split, not the most extreme).
@@ -39,6 +42,7 @@ suppressPackageStartupMessages({
 CELL_TYPE <- "CD4 T cells"
 FDR <- 0.05
 MIN_PCT <- 0.10
+MIN_PCT_RARE <- 0.01  # fig07d_5 and fig07d_6 also show genes detected in 1 to 10% of cells
 
 raw <- file.path("data", "raw")
 processed <- file.path("data", "processed")
@@ -64,9 +68,13 @@ donors <- levels(donor)
 stopifnot(length(donors) == 8)
 
 # --- normalize as the standard pipeline does ---------------------------------
+# log(1 + counts per 10,000), where a cell's total is taken over all genes,
+# before any gene is filtered out (Seurat's NormalizeData).
+counts_all_genes <- counts
+cell_total <- colSums(counts_all_genes)
 detected <- rowMeans(counts > 0) >= MIN_PCT
 counts <- counts[detected, ]
-lognorm <- as.matrix(log1p(t(t(counts) / colSums(counts)) * 1e4))
+lognorm <- as.matrix(log1p(t(t(counts) / cell_total) * 1e4))
 message(CELL_TYPE, ": ", ncol(counts), " cells from ", length(donors), " donors, ",
         nrow(counts), " genes tested")
 
@@ -159,6 +167,44 @@ write_csv(
              count = counts[example, ], lognorm = lognorm[example, ]),
   file.path(processed, "kang_null_example.csv")
 )
+
+# --- the shown split again, with rarely detected genes -----------------------
+# Gibson (2022) draws a "double volcano": an inner burst of small fold changes
+# with extreme significance and an outer burst of larger fold changes with
+# lower significance. The outer burst consists of rarely detected genes, which
+# the analysis above leaves out (Seurat's min.pct) and whose fold changes
+# Seurat shrinks by adding 1 to each mean. Here the same cell-level test is
+# run on every gene detected in at least MIN_PCT_RARE of the cells, and the
+# fold change is the plain ratio of mean normalized expression, without offset.
+pct_detected <- rowMeans(counts_all_genes > 0)
+rare_counts <- counts_all_genes[pct_detected >= MIN_PCT_RARE, ]
+rare_lognorm <- as.matrix(log1p(t(t(rare_counts) / cell_total) * 1e4))
+stopifnot(isTRUE(all.equal(rare_lognorm[rownames(lognorm), ], lognorm)))
+in_a <- donor %in% splits[, shown]
+rare_ranks <- t(apply(rare_lognorm, 1, rank))
+rare_tie <- apply(rare_lognorm, 1, function(v) { t <- table(v); sum(t^3 - t) })
+n_a <- sum(in_a)
+n_b <- n - n_a
+z <- rowSums(rare_ranks[, in_a, drop = FALSE]) - n_a * (n_a + 1) / 2 - n_a * n_b / 2
+sigma <- sqrt(n_a * n_b / 12 * ((n + 1) - rare_tie / (n * (n - 1))))
+p_rare <- 2 * pnorm(-abs((z - sign(z) * 0.5) / sigma))
+mean_a <- rowMeans(expm1(rare_lognorm[, in_a]))
+mean_b <- rowMeans(expm1(rare_lognorm[, !in_a]))
+stopifnot(all(mean_a > 0), all(mean_b > 0))  # the ratio is defined for every gene
+rare <- data.frame(
+  split = shown,
+  gene = rownames(rare_lognorm),
+  pct_detected = 100 * pct_detected[pct_detected >= MIN_PCT_RARE],
+  detected_in = ifelse(pct_detected[pct_detected >= MIN_PCT_RARE] >= MIN_PCT, "at least 10% of cells", "1 to 10% of cells"),
+  log2_ratio_of_means = log2(mean_a / mean_b),
+  p_cell = p_rare,
+  fdr_cell = p.adjust(p_rare, "BH")
+)
+# The well-detected genes must get the p-values of the main analysis.
+stopifnot(isTRUE(all.equal(rare$p_cell[match(results[[shown]]$gene, rare$gene)], results[[shown]]$p_cell)))
+write_csv(rare[order(rare$p_cell), ], file.path(processed, "kang_null_rare_genes.csv"))
+message("rare genes: ", nrow(rare), " genes detected in at least ", 100 * MIN_PCT_RARE, "% of cells; ",
+        paste(names(table(rare$detected_in)), table(rare$detected_in), collapse = ", "))
 
 message("splits: cell-level discoveries median ", median(summary_table$n_de_cell),
         " (range ", min(summary_table$n_de_cell), " to ", max(summary_table$n_de_cell),

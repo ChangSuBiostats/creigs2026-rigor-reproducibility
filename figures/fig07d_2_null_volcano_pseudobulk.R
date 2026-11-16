@@ -4,9 +4,10 @@
 # Shows:  the same cells, genes and donor split as fig07d_1, tested as a bulk
 #         RNA-seq experiment would be: counts summed per donor (pseudobulk),
 #         then DESeq2 with four donors per group. Blue: genes called at a
-#         false discovery rate below 5% (none in this split). Same axes as fig07d_1. The y-axis stops at 20; a gene above it is drawn
-#         as a triangle on the top edge and labelled with its value. The gene
-#         marked in orange is the one shown by donor in fig07d_4.
+#         false discovery rate below 5%. Same axes
+#         as fig07d_1. A gene above the y-axis limit is drawn as a triangle on
+#         the top edge and labelled with its value. The gene circled in orange
+#         is the one shown by donor in fig07d_4.
 # Data:   data/processed/kang_null_genes.csv, built by data/make_null_de.R from
 #         the control sample of Kang et al. (GEO GSE96583, logged in
 #         data/SOURCES.md).
@@ -26,10 +27,12 @@ genes <- read_csv(file.path(processed, "kang_null_genes.csv"), show_col_types = 
   mutate(called = !is.na(fdr_pseudobulk) & fdr_pseudobulk < fdr)
 
 # Both volcano plots (fig07d_1, fig07d_2) use the same axes so that their
-# heights can be compared directly. The y-axis stops at Y_MAX (request: Chang,
-# Nov 16): a gene above it is drawn as a triangle on the top edge and labelled
-# with its true value, so nothing is hidden.
-Y_MAX <- 20
+# heights can be compared directly. The y-axis stops at Y_MAX: a gene above it
+# is drawn as a triangle on the top edge and labelled with its true value, so
+# nothing is hidden. Y_MAX is the lowest multiple of 10 that leaves at most
+# one gene off the scale in either plot.
+neglog10p_all <- -log10(c(genes$p_cell, genes$p_pseudobulk))
+Y_MAX <- 10 * ceiling(sort(neglog10p_all, decreasing = TRUE)[2] / 10)
 x_max <- ceiling(max(abs(c(genes$log2fc_cell, genes$log2fc_pseudobulk)), na.rm = TRUE))
 # The gene shown by donor in fig07d_4 is marked in both volcano plots.
 example <- unique(read_csv(file.path(processed, "kang_null_example.csv"), show_col_types = FALSE)$gene)
@@ -40,21 +43,22 @@ genes <- genes |>
   filter(!is.na(p_pseudobulk)) |>
   mutate(neglog10p = -log10(p_pseudobulk), off_scale = neglog10p > Y_MAX, y = pmin(neglog10p, Y_MAX))
 message(sum(genes$called), " of ", nrow(genes), " genes called at FDR ", fdr,
-        "; smallest p-value ", signif(min(genes$p_pseudobulk), 3), "; ", sum(genes$off_scale),
-        " gene(s) above the axis: ", paste(genes$gene[genes$off_scale], collapse = ", "))
-# Only the marked gene may be off the scale; anything else would need a label too.
-stopifnot(all(genes$gene[genes$off_scale] == example))
-marked <- filter(genes, gene == example) |>
-  mutate(label = if_else(off_scale, paste0(gene, " (", round(neglog10p), ")"), gene))
+        "; smallest p-value ", signif(min(genes$p_pseudobulk), 3), "; y-axis to ", Y_MAX, "; above it: ",
+        paste0(genes$gene[genes$off_scale], " (", round(genes$neglog10p[genes$off_scale]), ")", collapse = ", "))
+marked <- filter(genes, gene == example)
+stopifnot(nrow(marked) == 1, !marked$off_scale)
 
 p <- ggplot(filter(genes, !off_scale), aes(log2fc_pseudobulk, y)) +
   geom_point(aes(colour = called), size = 0.9, stroke = 0, alpha = 0.8) +
-  geom_point(data = marked, shape = if (marked$off_scale) 17 else 21, size = 2.2, stroke = 0.6,
-             colour = deck$orange, fill = NA) +
-  geom_text(aes(label = label), marked, hjust = 0.5, nudge_y = 1.6,
+  # off the scale: triangle on the top edge, labelled with the true value
+  geom_point(aes(colour = called), filter(genes, off_scale), shape = 17, size = 2) +
+  geom_text(aes(label = paste0(gene, " (", round(neglog10p), ")"), colour = called), filter(genes, off_scale),
+            hjust = 1, nudge_x = -0.1, fontface = "italic", family = deck$font, size = deck$label_size) +
+  geom_point(data = marked, shape = 21, size = 2.2, stroke = 0.6, colour = deck$orange, fill = NA) +
+  geom_text(aes(label = gene), marked, hjust = 0.5, nudge_y = Y_MAX * 0.13,
             fontface = "italic", family = deck$font, size = deck$label_size, colour = deck$orange) +
   annotate("text", x = -x_max, y = Y_MAX * 0.9, hjust = 0, family = deck$font,
-           size = deck$label_size, colour = deck$text2,
+           size = deck$label_size, colour = deck$blue,
            label = paste0(sum(genes$called), " genes\nFDR < 5%"), lineheight = 0.9) +
   scale_colour_manual(values = c(`TRUE` = deck$blue, `FALSE` = deck$gray)) +
   scale_x_continuous(limits = c(-x_max, x_max), breaks = seq(-x_max, x_max, by = 1)) +

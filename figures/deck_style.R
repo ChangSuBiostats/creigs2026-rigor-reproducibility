@@ -44,12 +44,25 @@ theme_deck <- function(grid = FALSE) {
 }
 
 # Write output/<name>.png (300 dpi) and output/<name>.svg at the exact size.
+# Each file is drawn in the session's temporary folder and then copied into
+# output/, and the copy is checked. The repository sits in a cloud-synced
+# folder, where drawing directly into output/ occasionally left an empty file.
 save_fig <- function(plot, name, size = deck$half) {
   dir.create("output", showWarnings = FALSE)
-  ggsave(file.path("output", paste0(name, ".png")), plot, width = size[1], height = size[2],
-         dpi = 300, device = ragg::agg_png, bg = "white")
-  ggsave(file.path("output", paste0(name, ".svg")), plot, width = size[1], height = size[2],
-         device = svglite::svglite, bg = "white")
+  put <- function(ext, ...) {
+    tmp <- tempfile(fileext = ext)
+    ggsave(tmp, plot, width = size[1], height = size[2], bg = "white", ...)
+    dest <- file.path("output", paste0(name, ext))
+    for (attempt in 1:3) {
+      ok <- file.copy(tmp, dest, overwrite = TRUE) && identical(file.size(dest), file.size(tmp)) &&
+        identical(unname(tools::md5sum(dest)), unname(tools::md5sum(tmp)))
+      if (ok) break
+      Sys.sleep(1)
+    }
+    if (!ok) stop("could not write ", dest)
+  }
+  put(".png", dpi = 300, device = ragg::agg_png)
+  put(".svg", device = svglite::svglite)
   message("wrote output/", name, ".png and output/", name, ".svg")
 }
 
