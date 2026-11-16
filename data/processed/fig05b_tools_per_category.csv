@@ -1,34 +1,34 @@
 phase,category,n_tools,pct_of_tools,label
-Data acquisition,Quantification,113,6.088362068965517,Quantification
-Data acquisition,Alignment,60,3.2327586206896552,Alignment
-Data acquisition,UMIs,60,3.2327586206896552,UMIs
-Data acquisition,Assembly,11,0.5926724137931034,Assembly
-Data cleaning,Integration,303,16.325431034482758,Integration
-Data cleaning,QualityControl,182,9.806034482758621,Quality control
-Data cleaning,Normalisation,176,9.482758620689655,Normalization
-Data cleaning,Imputation,113,6.088362068965517,Imputation
-Data cleaning,GeneFiltering,69,3.7176724137931036,Gene filtering
-Data cleaning,CellCycle,39,2.101293103448276,Cell cycle
-Cell assignment,Clustering,399,21.497844827586206,Clustering
-Cell assignment,Classification,225,12.122844827586206,Classification
-Cell assignment,Ordering,204,10.991379310344827,Ordering
-Cell assignment,RareCells,21,1.1314655172413792,Rare cells
-Cell assignment,StemCells,10,0.5387931034482759,Stem cells
-Gene identification,GeneNetworks,245,13.200431034482758,Gene networks
-Gene identification,DifferentialExpression,177,9.536637931034482,Diff. expression
-Gene identification,MarkerGenes,155,8.351293103448276,Marker genes
-Gene identification,GeneSets,149,8.02801724137931,Gene sets
-Gene identification,ExpressionPatterns,57,3.0711206896551726,Expression patterns
-Multiple phases,Visualisation,766,41.27155172413793,Visualization
-Multiple phases,DimensionalityReduction,468,25.21551724137931,Dim. reduction
-Multiple phases,Interactive,118,6.357758620689655,Interactive
-Multiple phases,VariableGenes,115,6.196120689655173,Variable genes
-Other,Simulation,111,5.980603448275862,Simulation
-Other,Variants,89,4.795258620689655,Variants
-Other,Perturbations,56,3.0172413793103448,Perturbations
-Other,Immune,54,2.9094827586206895,Immune
-Other,AlternativeSplicing,48,2.586206896551724,Alt. splicing
-Other,Transformation,12,0.646551724137931,Transformation
-Other,AlleleSpecific,8,0.43103448275862066,Allele specific
-Other,Modality,8,0.43103448275862066,Modality
-Other,Haplotypes,2,0.10775862068965517,Haplotypes
+Data acquisition,Quantification,113,6.326987681970885,Quantification
+Data acquisition,UMIs,59,3.303471444568869,UMIs
+Data acquisition,Alignment,58,3.2474804031354982,Alignment
+Data acquisition,Assembly,10,0.5599104143337066,Assembly
+Data cleaning,Integration,285,15.957446808510639,Integration
+Data cleaning,QualityControl,176,9.854423292273236,Quality control
+Data cleaning,Normalisation,166,9.29451287793953,Normalization
+Data cleaning,Imputation,110,6.159014557670773,Imputation
+Data cleaning,GeneFiltering,67,3.7513997760358344,Gene filtering
+Data cleaning,CellCycle,38,2.127659574468085,Cell cycle
+Cell assignment,Clustering,391,21.892497200447927,Clustering
+Cell assignment,Classification,211,11.81410974244121,Classification
+Cell assignment,Ordering,199,11.142217245240762,Ordering
+Cell assignment,RareCells,20,1.1198208286674132,Rare cells
+Cell assignment,StemCells,10,0.5599104143337066,Stem cells
+Gene identification,GeneNetworks,233,13.045912653975364,Gene networks
+Gene identification,DifferentialExpression,167,9.350503919372901,Diff. expression
+Gene identification,MarkerGenes,149,8.342665173572229,Marker genes
+Gene identification,GeneSets,139,7.782754759238522,Gene sets
+Gene identification,ExpressionPatterns,54,3.0235162374020157,Expression patterns
+Multiple phases,Visualisation,729,40.817469204927214,Visualization
+Multiple phases,DimensionalityReduction,448,25.083986562150056,Dim. reduction
+Multiple phases,Interactive,115,6.438969764837626,Interactive
+Multiple phases,VariableGenes,108,6.047032474804031,Variable genes
+Other,Simulation,108,6.047032474804031,Simulation
+Other,Variants,88,4.927211646136618,Variants
+Other,Perturbations,52,2.9115341545352744,Perturbations
+Other,AlternativeSplicing,48,2.687569988801792,Alt. splicing
+Other,Immune,44,2.463605823068309,Immune
+Other,Transformation,12,0.671892497200448,Transformation
+Other,Modality,8,0.4479283314669653,Modality
+Other,AlleleSpecific,7,0.3919372900335946,Allele specific
+Other,Haplotypes,2,0.11198208286674133,Haplotypes

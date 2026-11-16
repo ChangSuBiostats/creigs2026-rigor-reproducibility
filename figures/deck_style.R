@@ -22,6 +22,10 @@ deck <- list(
 
 processed <- file.path("data", "processed")
 
+# Slide 5 (fig05a, fig05b): last month of regular curation of the scRNA-tools
+# database. Both figures use only tools added by this date; see NOTES.md.
+scrna_tools_cutoff <- as.Date("2024-05-31")
+
 # grid = TRUE adds light horizontal gridlines (line and scatter charts only).
 theme_deck <- function(grid = FALSE) {
   theme_classic(base_size = 12, base_family = deck$font) +

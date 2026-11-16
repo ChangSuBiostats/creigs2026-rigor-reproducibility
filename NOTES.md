@@ -221,12 +221,12 @@ database has grown by about 70% since, so the paper figure is out of date.
   only 70 tools have been added since. Showing that flat tail would suggest
   tool development stopped, which the data cannot support. The figure shows
   1,786 tools by May 2024; the cut-off and the reason are stated on the slide.
-  `fig05b` still uses all 1,856 tools, since it is not a time series.
+  `fig05b` uses the same 1,786 tools (see below).
 
 ### fig05b (tools per analysis category)
 
 - Same content as Fig. 1D of the paper, updated to the current database and
-  laid out horizontally (request: Chang, Nov 16): number of the 1,856 tools
+  laid out horizontally (request: Chang, Nov 16): number of tools
   assigned to each of the 33 categories, grouped by workflow phase from left
   to right. The table is `data/processed/fig05b_tools_per_category.csv`.
 - Size is 7.8 x 2.85 in, not one of the two README sizes, so that it sits
@@ -236,10 +236,17 @@ database has grown by about 70% since, so the paper figure is out of date.
   identification) are taken from the paper's figure.
 - Bars and labels are tool counts, not percentages (request: Chang, Nov 16);
   the paper shows both. Percentages are in the table.
-- A tool can be in several categories (4,623 assignments), so the counts sum
-  to more than 1,856.
-- Most common: visualization 766 (41%), dimensionality reduction 468 (25%),
-  clustering 399 (21%), integration 303 (16%).
+- **Only the 1,786 tools added by the end of May 2024 are counted**, the same
+  cut-off as `fig05a` (decision: Chang, Nov 16), so both panels describe the
+  same set of tools. The 70 tools added later are left out. The cut-off is set
+  once, as `scrna_tools_cutoff` in `figures/deck_style.R`.
+- Caveat: the categories are the ones recorded in the current snapshot. The
+  database files hold no history of category edits, so a tool whose categories
+  were changed after May 2024 is counted under its current ones.
+- A tool can be in several categories (4,424 assignments), so the counts sum
+  to more than 1,786.
+- Most common: visualization 729 (41%), dimensionality reduction 448 (25%),
+  clustering 391 (22%), integration 285 (16%).
 - Category names are the database's, with spaces added and US spelling; three
   are abbreviated as in the paper (Dim., Diff., Alt.). "Ordering" is the
   database's name for trajectory or pseudotime inference.

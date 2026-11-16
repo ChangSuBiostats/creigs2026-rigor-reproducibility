@@ -21,7 +21,7 @@
 
 source(file.path("figures", "deck_style.R"))
 
-cutoff <- as.Date("2024-05-31")  # last month of regular curation
+cutoff <- scrna_tools_cutoff  # end of May 2024, set in deck_style.R
 
 all_tools <- read_csv(file.path(processed, "scrna_tools.csv"), show_col_types = FALSE)
 tools <- all_tools |>

@@ -5,6 +5,9 @@
 #         its 33 analysis categories, grouped by phase of a standard analysis
 #         workflow and ordered left to right. A tool can belong to several
 #         categories, so the counts sum to more than the number of tools.
+#         Only tools added to the database by the end of May 2024 are counted,
+#         the same cut-off as fig05a (decision: Chang, Nov 16, 2026; see
+#         NOTES.md). Categories are the ones recorded in the current snapshot.
 #         Same content as Fig. 1D of Zappia & Theis (2021), updated to the
 #         current database and laid out horizontally to fit the slide. The
 #         phase names (the database only numbers them) are taken from that
@@ -32,8 +35,11 @@ phase_names <- c(
   "Other" = "Other"
 )
 
-n_tools <- nrow(read_csv(file.path(processed, "scrna_tools.csv"), show_col_types = FALSE))
+tools <- read_csv(file.path(processed, "scrna_tools.csv"), show_col_types = FALSE) |>
+  filter(added <= scrna_tools_cutoff)
+n_tools <- nrow(tools)
 categories <- read_csv(file.path(processed, "scrna_tools_categories.csv"), show_col_types = FALSE) |>
+  semi_join(tools, by = "tool") |>
   count(phase, category, name = "n_tools") |>
   mutate(
     pct_of_tools = 100 * n_tools / .env$n_tools,
@@ -51,6 +57,8 @@ categories <- read_csv(file.path(processed, "scrna_tools_categories.csv"), show_
   ) |>
   arrange(phase, desc(pct_of_tools))
 stopifnot(!anyNA(categories$phase))
+message(n_tools, " tools added by ", scrna_tools_cutoff, "; ", sum(categories$n_tools),
+        " category assignments in ", nrow(categories), " categories")
 write_csv(mutate(categories, phase = stringr::str_replace(phase, "\n", " ")),
           file.path(processed, "fig05b_tools_per_category.csv"))
 
