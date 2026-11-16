@@ -381,6 +381,13 @@ Purpose: a bulk-style contrast for the single-cell volcano plot in Gibson
   effect easy to explain.
 - In the shown split the largest -log10 P is 56, lower than the 100+ in
   Gibson's drawing; other splits reach 100 to 290.
+- Gibson's drawing is a "double volcano": an inner burst (small fold change,
+  extreme significance) and an outer burst (larger fold change, lower
+  significance). `fig07d_1` shows only the inner one. A check outside the repo
+  (Nov 16) showed why: the outer burst is made of genes detected in 1 to 10%
+  of cells and appears only when the fold change uses a small pseudocount.
+  The figure follows Seurat's defaults (genes in at least 10% of cells,
+  pseudocount 1), which remove it. Kept as is.
 - The y-axis of both volcano plots stops at 20 (request: Chang, Nov 16). Only
   HLA-C lies above it (56); it is drawn as a triangle on the top edge with its
   value in the label. The scripts stop if any other gene is off the scale.
