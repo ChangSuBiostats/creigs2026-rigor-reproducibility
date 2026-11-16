@@ -1,0 +1,34 @@
+category,n_tools,pct_of_tools,label
+Visualisation,766,41.27155172413793,Visualization
+DimensionalityReduction,468,25.21551724137931,Dimensionality reduction
+Clustering,399,21.497844827586206,Clustering
+Integration,303,16.325431034482758,Integration
+GeneNetworks,245,13.200431034482758,Gene networks
+Classification,225,12.122844827586206,Classification
+Ordering,204,10.991379310344827,Ordering
+QualityControl,182,9.806034482758621,Quality control
+DifferentialExpression,177,9.536637931034482,Differential expression
+Normalisation,176,9.482758620689655,Normalization
+MarkerGenes,155,8.351293103448276,Marker genes
+GeneSets,149,8.02801724137931,Gene sets
+Interactive,118,6.357758620689655,Interactive
+VariableGenes,115,6.196120689655173,Variable genes
+Imputation,113,6.088362068965517,Imputation
+Quantification,113,6.088362068965517,Quantification
+Simulation,111,5.980603448275862,Simulation
+Variants,89,4.795258620689655,Variants
+GeneFiltering,69,3.7176724137931036,Gene filtering
+Alignment,60,3.2327586206896552,Alignment
+UMIs,60,3.2327586206896552,Umis
+ExpressionPatterns,57,3.0711206896551726,Expression patterns
+Perturbations,56,3.0172413793103448,Perturbations
+Immune,54,2.9094827586206895,Immune
+AlternativeSplicing,48,2.586206896551724,Alternative splicing
+CellCycle,39,2.101293103448276,Cell cycle
+RareCells,21,1.1314655172413792,Rare cells
+Transformation,12,0.646551724137931,Transformation
+Assembly,11,0.5926724137931034,Assembly
+StemCells,10,0.5387931034482759,Stem cells
+AlleleSpecific,8,0.43103448275862066,Allele specific
+Modality,8,0.43103448275862066,Modality
+Haplotypes,2,0.10775862068965517,Haplotypes
