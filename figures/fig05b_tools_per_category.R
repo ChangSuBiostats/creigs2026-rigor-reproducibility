@@ -1,10 +1,10 @@
 # fig05b: analysis tasks covered by single-cell RNA-seq tools.
 #
 # Slide:  5, "Rapid Growth in Single Cell Analysis Tools"
-# Shows:  percentage of tools in the scRNA-tools database assigned to each of
+# Shows:  number of tools in the scRNA-tools database assigned to each of
 #         its 33 analysis categories, grouped by phase of a standard analysis
 #         workflow and ordered left to right. A tool can belong to several
-#         categories, so the percentages do not sum to 100.
+#         categories, so the counts sum to more than the number of tools.
 #         Same content as Fig. 1D of Zappia & Theis (2021), updated to the
 #         current database and laid out horizontally to fit the slide. The
 #         phase names (the database only numbers them) are taken from that
@@ -56,14 +56,14 @@ write_csv(mutate(categories, phase = stringr::str_replace(phase, "\n", " ")),
 
 categories <- mutate(categories, label = factor(label, levels = label))
 
-# Category names (9 pt) and value labels (8 pt) are below the 12 pt in the
+# Category names (9 pt) and value labels (7 pt) are below the 12 pt in the
 # README: 33 categories do not fit otherwise.
-p <- ggplot(categories, aes(label, pct_of_tools)) +
+p <- ggplot(categories, aes(label, n_tools)) +
   geom_col(fill = deck$blue, width = 0.75) +
-  geom_text(aes(label = if_else(pct_of_tools < 0.5, "<1", as.character(round(pct_of_tools)))), vjust = -0.4, family = deck$font, size = 8 / .pt) +
+  geom_text(aes(label = n_tools), vjust = -0.4, family = deck$font, size = 7 / .pt) +
   facet_grid(cols = vars(phase), scales = "free_x", space = "free_x") +
-  scale_y_continuous(breaks = c(0, 20, 40), limits = c(0, 50), expand = c(0, 0)) +
-  labs(x = NULL, y = "Tools (%)") +
+  scale_y_continuous(breaks = c(0, 400, 800), limits = c(0, 900), expand = c(0, 0)) +
+  labs(x = NULL, y = "Tools") +
   theme_deck() +
   theme(
     axis.text.x = element_text(size = 9, angle = 45, hjust = 1, vjust = 1),
