@@ -198,3 +198,37 @@ slides. Reasons read from the two pages:
 
 The biology agrees: both show an isolated B-cell island, a monocyte group with
 dendritic cells and platelets, and a T-to-NK continuum.
+
+## Slide 5
+
+Source: scRNA-tools database (Zappia & Theis 2021, Genome Biology 22:301;
+scrna-tools.org; data on GitHub under the MIT licence). Snapshot of 2026-11-16:
+1,856 tools in 33 analysis categories.
+
+Why the figures are redrawn and not copied from the paper: the paper's Fig. 1
+(CC BY 4.0, so reuse would be allowed) ends in 2021 at about 1,000 tools. The
+database has grown by about 70% since, so the paper figure is out of date.
+`fig05a` and `fig05b` are updated versions of its panels A and D.
+
+### fig05a (tools over time)
+
+- Cumulative tools by the date each was added to the database, which is not
+  the tool's release date. The database started in September 2016.
+- Counts: 164 (start of 2018), 540 (start of 2020), 1,087 (when the paper was
+  published, 2021-10-29), 1,786 (end of May 2024), 1,856 (now).
+- **The flat part after mid-2024 is a curation effect.** The site states the
+  database has been in low-maintenance mode since May 2024; only 70 tools have
+  been added since. The curve does not show that tool development stopped, and
+  1,856 is a lower bound. This needs saying on the slide.
+
+### fig05b (tools per analysis category)
+
+- Percentage of all 1,856 tools assigned to each of the 14 most common
+  categories; all 33 are in `data/processed/fig05b_tools_per_category.csv`.
+- A tool can be in several categories (4,623 assignments), so the percentages
+  do not sum to 100.
+- Most common: visualization 41%, dimensionality reduction 25%, clustering
+  21%, integration 16%.
+- Category names are the database's, with spaces added and US spelling.
+  "Ordering" is the database's name for trajectory or pseudotime inference.
+- Style deviation: category names and value labels are 9 pt, as in `fig02b`.

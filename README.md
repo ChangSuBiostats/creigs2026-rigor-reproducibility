@@ -70,7 +70,8 @@ possibly sample counts). List which dimensions are covered and which would need
 manual curation or another source (e.g., CELLxGENE Census metadata, HCA). Propose
 1–2 figures (`fig03a`, `fig03b`) and confirm with Chang before curating anything by hand.
 
-### Slide 5: "Rapid Growth in Single Cell Analysis Tools" (optional)
+### Slide 5: "Rapid Growth in Single Cell Analysis Tools" (done; see `NOTES.md`)
+Redrawn from the scRNA-tools database, because the paper figure ends in 2021. Original brief:
 The plan is to reuse a figure from a review. If Chang wants it redrawn in deck style,
 use the scRNA-tools database (Zappia & Theis 2021, *Over 1000 tools reveal trends in the
 single-cell RNA-seq analysis landscape*, Genome Biology; data believed to be at
