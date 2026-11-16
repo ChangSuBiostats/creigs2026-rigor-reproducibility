@@ -22,7 +22,7 @@
 source(file.path("figures", "deck_style.R"))
 
 splits <- read_csv(file.path(processed, "kang_null_splits.csv"), show_col_types = FALSE) |>
-  select(split, `Cell level\n(Wilcoxon)` = n_de_cell, `Donor level\n(pseudobulk)` = n_de_pseudobulk) |>
+  select(split, `Cell level\n(Wilcoxon)` = n_de_cell, `Individual level\n(pseudobulk)` = n_de_pseudobulk) |>
   tidyr::pivot_longer(-split, names_to = "test", values_to = "n_de")
 medians <- splits |> group_by(test) |> summarise(n_de = median(n_de)) |> arrange(test)
 

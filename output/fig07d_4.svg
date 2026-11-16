@@ -5243,15 +5243,15 @@
 <polyline points='197.85,172.19 197.85,169.20 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
 <polyline points='226.69,172.19 226.69,169.20 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
 <polyline points='255.53,172.19 255.53,169.20 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
-<text x='53.66' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='14.14px' lengthAdjust='spacingAndGlyphs'>D1</text>
-<text x='82.49' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='15.69px' lengthAdjust='spacingAndGlyphs'>D2</text>
-<text x='111.33' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='15.61px' lengthAdjust='spacingAndGlyphs'>D3</text>
-<text x='140.17' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='15.77px' lengthAdjust='spacingAndGlyphs'>D4</text>
-<text x='169.01' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='15.33px' lengthAdjust='spacingAndGlyphs'>D5</text>
-<text x='197.85' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='15.78px' lengthAdjust='spacingAndGlyphs'>D6</text>
-<text x='226.69' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='15.02px' lengthAdjust='spacingAndGlyphs'>D7</text>
-<text x='255.53' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='16.14px' lengthAdjust='spacingAndGlyphs'>D8</text>
-<text x='154.59' y='198.18' text-anchor='middle' style='font-size: 14.00px; font-family: "Georgia";' textLength='39.58px' lengthAdjust='spacingAndGlyphs'>Donor</text>
+<text x='53.66' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='5.16px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='82.49' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='6.70px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text x='111.33' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='6.62px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='140.17' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='6.78px' lengthAdjust='spacingAndGlyphs'>4</text>
+<text x='169.01' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='6.34px' lengthAdjust='spacingAndGlyphs'>5</text>
+<text x='197.85' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='6.80px' lengthAdjust='spacingAndGlyphs'>6</text>
+<text x='226.69' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='6.03px' lengthAdjust='spacingAndGlyphs'>7</text>
+<text x='255.53' y='182.90' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='7.16px' lengthAdjust='spacingAndGlyphs'>8</text>
+<text x='154.59' y='198.18' text-anchor='middle' style='font-size: 14.00px; font-family: "Georgia";' textLength='64.09px' lengthAdjust='spacingAndGlyphs'>Individual</text>
 <text transform='translate(14.56,159.52) rotate(-90)' style='font-size: 14.00px; font-style: italic; font-family: "Georgia";' textLength='43.47px' lengthAdjust='spacingAndGlyphs'>HLA-C</text>
 <text transform='translate(14.56,116.05) rotate(-90)' style='font-size: 14.00px; font-family: "Symbol";' textLength='3.50px' lengthAdjust='spacingAndGlyphs'> </text>
 <text transform='translate(14.56,112.55) rotate(-90)' style='font-size: 14.00px; font-family: "Georgia";' textLength='98.89px' lengthAdjust='spacingAndGlyphs'>expression (log)</text>

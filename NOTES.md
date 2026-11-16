@@ -355,6 +355,18 @@ Purpose: a bulk-style contrast for the single-cell volcano plot in Gibson
   investigated; real differences between the donors of a split (for example
   sex) would produce them.
 
+### Terminology (decision: Chang, Nov 16)
+
+- The lecture does not use "pseudo-replication". The contrast is stated as
+  the unit of analysis: cells as independent units (cell-level test) against
+  individuals as independent units (individual-level test).
+- Reason: Squair et al. use "pseudo-replicates" for something narrower,
+  bulk-style samples made by shuffling which replicate each cell belongs to.
+  Chang's earlier wording matched the usual meaning (Zimmerman et al. 2021),
+  but the two would be confused on slides that cite Squair.
+- Figure labels say "individual". The scripts and tables say "donor", the
+  dataset's own term; `fig03a` also keeps "donors", which is CELLxGENE's term.
+
 ### Figures
 
 - `fig07d_1`, `fig07d_2`: volcano plots of the same split, cell level and

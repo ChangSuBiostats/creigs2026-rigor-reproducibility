@@ -39,10 +39,10 @@ p <- ggplot(cells, aes(donor, lognorm)) +
   annotate("text", x = c(2.5, 6.5), y = max(cells$lognorm) * 1.06, label = c("Group A", "Group B"),
            colour = c(deck$blue, deck$orange), family = deck$font, size = deck$label_size) +
   scale_colour_manual(values = c(A = deck$blue, B = deck$orange)) +
-  scale_x_discrete(labels = paste0("D", 1:8)) +
+  scale_x_discrete(labels = 1:8) +
   # the axis starts a little below zero so that cells with no reads stay visible
   scale_y_continuous(limits = c(-0.25, max(cells$lognorm) * 1.12), breaks = c(0, 2, 4, 6), expand = c(0, 0)) +
-  labs(x = "Donor", y = bquote(italic(.(gene)) ~ "expression (log)")) +
+  labs(x = "Individual", y = bquote(italic(.(gene)) ~ "expression (log)")) +
   theme_deck()
 
 save_fig(p, "fig07d_4")

@@ -139,7 +139,7 @@
 <polyline points='200.62,174.95 200.62,171.96 ' style='stroke-width: 0.85; stroke-linecap: butt;' />
 <text x='104.35' y='185.66' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='47.69px' lengthAdjust='spacingAndGlyphs'>Cell level</text>
 <text x='104.35' y='198.62' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='59.20px' lengthAdjust='spacingAndGlyphs'>(Wilcoxon)</text>
-<text x='200.62' y='185.66' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='61.25px' lengthAdjust='spacingAndGlyphs'>Donor level</text>
+<text x='200.62' y='185.66' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='82.23px' lengthAdjust='spacingAndGlyphs'>Individual level</text>
 <text x='200.62' y='198.62' text-anchor='middle' style='font-size: 12.00px; font-family: "Georgia";' textLength='70.59px' lengthAdjust='spacingAndGlyphs'>(pseudobulk)</text>
 <text transform='translate(13.68,87.97) rotate(-90)' text-anchor='middle' style='font-size: 14.00px; font-family: "Georgia";' textLength='154.77px' lengthAdjust='spacingAndGlyphs'>Genes called (FDR &lt; 5%)</text>
 </g>
