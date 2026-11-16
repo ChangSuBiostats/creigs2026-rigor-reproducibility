@@ -251,3 +251,70 @@ database has grown by about 70% since, so the paper figure is out of date.
   are abbreviated as in the paper (Dim., Diff., Alt.). "Ordering" is the
   database's name for trajectory or pseudotime inference.
 - Style deviation: category names are 9 pt and value labels 7 pt.
+
+## Slide 6 (no generated figures)
+
+"Single-Cell Data Analysis: Art Rather Than Science?" The slide asked whether
+any paper documents a lack of reproducibility or rigor in single-cell analysis,
+with statistics to borrow. It carries quoted statistics, so there is no script
+and no data file. Every number below was checked on Nov 16, 2026 against the
+paper's full text (Europe PMC open-access XML), except where marked.
+
+The slide title comes from Gibson (2022): "students new to the field ... soon
+realize that single cell data analysis is as much an art as a science."
+
+| Topic | Statistic, as stated in the paper | Source |
+|---|---|---|
+| Validation | "I scanned approximately fifty single cell transcriptomic studies in high impact journals in the past year, and found evidence for external validation in just a handful." | Gibson 2022 |
+| Clustering | "it is not unusual for reanalysis to find 20% fewer or more clusters in datasets downloaded from public repositories, with between 50% and 70% equivalence of cell-type assignments." | Gibson 2022 |
+| Data sharing | 72 published scRNA-seq datasets; "only 35 (49%) could be fully reconstructed from publicly available data"; 31 of 69 (45%) had no cell type annotations. | Skinnider et al. 2021 |
+| Software | Seurat and Scanpy with defaults: differences "comparable to the variability introduced by sequencing fewer than 5% of reads or analyzing fewer than 20% of cells." | Rich et al. 2026 (abstract) |
+| Visualization | 2D t-SNE/UMAP embeddings: Jaccard distance between each cell's 30 nearest neighbors in the embedding and in the original space "with an average consistently above 0.7". | Chari & Pachter 2023 |
+| Differential expression | "single-cell methods identified hundreds of DE genes in the absence of any perturbation" (replicates assigned at random to two groups). | Squair et al. 2021 |
+| Differential expression | Re-analysis of the first Alzheimer's snRNA-seq dataset with pseudobulk: 26 DEGs, "549 times fewer DEGs than that reported originally at an FDR of 0.05". | Murphy et al. 2023 |
+| Replication | 17 Alzheimer's snRNA-seq studies: "over 85% of the AD DEGs we detected in one individual dataset failed to reproduce in any of the 16 others". | Nakatsuka et al. 2025 |
+
+Caveats to keep with the numbers:
+
+- Gibson's figures are his own experience and an informal scan, not a
+  systematic survey. The paper is a perspective.
+- A Jaccard distance of 0.7 means the two neighbor sets share 30% of their
+  union, which is fewer than half of each cell's 30 neighbors. Do not restate
+  it as "70% of neighbors are lost". The paper's conclusions have been
+  disputed in print (not checked further).
+- Murphy et al. is one dataset (Mathys et al. 2019). The original authors'
+  final list was 1,031 DEGs, which required significance in both a cell-level
+  and a patient-level test; the "549 times" compares against the cell-level
+  result at FDR 0.05.
+- Nakatsuka et al.: the 85% is for Alzheimer's with pseudobulk DESeq2 at FDR
+  0.05. Parkinson's, Huntington's and COVID-19 studies reproduced better, and
+  the authors attribute part of the gap to low power in single studies.
+- Rich et al.: only the abstract of the journal version was checked. The
+  preprint gives a Jaccard index of 0.22 for highly variable genes and an
+  adjusted Rand index of 0.53 for clusters between the two tools; these two
+  were read through an automated summary, not verified by hand.
+- Also relevant, not used: Zimmerman et al. 2021 (type I error of cell-level
+  tests in simulation, Table 1).
+
+References:
+
+- Gibson G (2022). Perspectives on rigor and reproducibility in single cell
+  genomics. PLoS Genetics 18:e1010210.
+- Skinnider MA, Squair JW, Courtine G (2021). Enabling reproducible
+  re-analysis of single-cell data. Genome Biology 22:215.
+- Rich JM, Moses L, Einarsson PH, et al., Pachter L (2026). The impact of
+  package selection and versioning on single-cell RNA-seq analysis. Cell
+  Systems 17(4):101560. Preprint: bioRxiv 10.1101/2024.04.04.588111.
+- Chari T, Pachter L (2023). The specious art of single-cell genomics. PLoS
+  Computational Biology 19:e1011288.
+- Squair JW, et al. (2021). Confronting false discoveries in single-cell
+  differential expression. Nature Communications 12:5692.
+- Murphy AE, Fancy N, Skene N (2023). Avoiding false discoveries in
+  single-cell RNA-seq by revisiting the first Alzheimer's disease dataset.
+  eLife 12:RP90214.
+- Nakatsuka N, et al., Satija R (2025). Improving reproducibility of
+  differentially expressed genes in single-cell transcriptomic studies of
+  neurodegenerative diseases through meta-analysis. Nature Communications
+  16:7436.
+- Zimmerman KD, Espeland MA, Langefeld CD (2021). A practical solution to
+  pseudoreplication bias in single-cell studies. Nature Communications 12:738.
