@@ -23,21 +23,11 @@ theme_layout <- function() {
           axis.title = element_text(size = 14, colour = deck$text))
 }
 
-# One layout, cells colored by type, each type named at its median position.
-# Names are black with a white outline. ggrepel moves overlapping names apart;
-# its seed only affects name placement.
-layout_plot <- function(cells, x, y, xlab, ylab, label_seed = 1) {
-  centers <- cells |>
-    group_by(cell_type) |>
-    summarise(x = median(.data[[x]]), y = median(.data[[y]]), .groups = "drop")
+# One layout, cells colored by type. No names or legend on the plot: the names
+# covered the cells, and the colors are explained aloud (Chang, Nov 16, 2026).
+layout_plot <- function(cells, x, y, xlab, ylab) {
   ggplot(cells, aes(.data[[x]], .data[[y]], colour = cell_type)) +
     geom_point(size = 0.9, stroke = 0, shape = 16) +
-    ggrepel::geom_text_repel(
-      data = centers, aes(x, y, label = cell_type), inherit.aes = FALSE,
-      family = deck$font, size = 12 / .pt, colour = deck$text, bg.color = "white", bg.r = 0.18,
-      min.segment.length = Inf, point.size = NA, box.padding = 0.15, max.overlaps = Inf,
-      seed = label_seed
-    ) +
     scale_colour_manual(values = type_colors) +
     labs(x = xlab, y = ylab) +
     theme_layout()

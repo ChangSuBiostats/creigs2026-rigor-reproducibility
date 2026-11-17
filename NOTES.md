@@ -434,6 +434,8 @@ darker text.
 - The reference script used scanpy with other settings (1,838 variable genes, 40 components,
   50 neighbors, Leiden at resolution 2, UMAP minimum distance 0.5). The R version uses the
   Seurat tutorial throughout, so that slides 9, 11 and 12 show the same analysis.
+- fig09a to fig09c carry no cell type names or legend: the names covered the cells, and Chang
+  explains the colors aloud (Nov 16).
 - Text in these figures is black and at least 12 pt (names of cell types) or 14 pt (everything
   else) at placed size, after Chang's comment that earlier figures were too small and too light.
 

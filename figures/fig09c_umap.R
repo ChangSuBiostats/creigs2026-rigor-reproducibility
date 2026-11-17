@@ -2,7 +2,8 @@
 #
 # Slide:  9, "Dimension reduction for visualizing single-cell data"
 # Shows:  2,638 blood cells from one donor, each a point, placed by UMAP (on 10 principal components)
-#         and colored by the cell type of the Seurat tutorial. The three
+#         and colored by the cell type of the Seurat tutorial (no names on
+#         the plot). The three
 #         figures fig09a (PCA), fig09b (t-SNE) and fig09c (UMAP) show the same
 #         cells with the same colors.
 # Data:   data/processed/pbmc3k_cells.csv, built by data/make_pbmc3k.R from the
@@ -10,8 +11,7 @@
 # Cite:   Seurat tutorial, satijalab.org/seurat/articles/pbmc3k_tutorial
 #         (Hao et al. 2024, Nature Biotechnology 42:293). UMAP: McInnes, Healy & Melville
 #         (2018), arXiv:1802.03426.
-# Seed:   the layout uses Seurat's default (42, in data/make_pbmc3k.R). Here: 1, for the placement of
-#         the cell type names only.
+# Seed:   the layout uses Seurat's default (42, in data/make_pbmc3k.R).
 # Output: output/fig09c.png, output/fig09c.svg
 # Run from the repository root: Rscript figures/fig09c_umap.R
 
