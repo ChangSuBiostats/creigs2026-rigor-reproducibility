@@ -23,6 +23,9 @@
 #           data/processed/pbmc3k_layouts.csv         one row per cell and layout
 #           data/processed/pbmc3k_type_distances.csv  one row per pair of cell
 #                                                     types and layout (fig12)
+#           data/processed/pbmc3k_resolutions.csv     one row per cell: clusters
+#                                                     at resolutions 0.1, 0.5
+#                                                     and 2.5 (fig15)
 #           data/processed/pbmc3k_gene_pairs.csv      one row per cell and gene
 #                                                     pair (fig08): three pairs
 #                                                     of genes drawn at random
@@ -89,6 +92,19 @@ cells <- data.frame(
 )
 write_csv(cells, file.path(processed, "pbmc3k_cells.csv"))
 message(nrow(cells), " cells; ", paste(names(table(cell_type)), table(cell_type), collapse = ", "))
+
+# --- clusters at three resolutions (fig15a to fig15c) ------------------------
+# Same neighbor graph, Louvain at a low, the tutorial's and a high resolution.
+resolutions <- c(0.1, 0.5, 2.5)
+by_resolution <- data.frame(cell = cells$cell, umap1 = cells$umap1, umap2 = cells$umap2)
+for (r in resolutions) {
+  pbmc <- FindClusters(pbmc, resolution = r, verbose = FALSE)
+  by_resolution[[paste0("resolution_", r)]] <- as.character(Idents(pbmc))
+}
+stopifnot(identical(by_resolution$resolution_0.5, cells$cluster))
+write_csv(by_resolution, file.path(processed, "pbmc3k_resolutions.csv"))
+message("clusters at resolutions ", paste(resolutions, collapse = ", "), ": ",
+        paste(sapply(by_resolution[, -(1:3)], function(v) length(unique(v))), collapse = ", "))
 
 # --- three random pairs of genes (fig08) -------------------------------------
 set.seed(20261118)

@@ -488,3 +488,26 @@ darker text.
   before looking: ZFPL1 and ZFP37; ATAD2 and ZNF107; PPP3CA and CTD-2336O2.1. Cells with no
   reads of either gene: 2,518, 2,589 and 2,459 of 2,638. fig08 shows the first pair; no pair
   was chosen for its picture.
+
+## Example 2: clustering (fig14a to fig14c, fig15a to fig15c)
+
+- Figure numbers follow the slide numbers of the deck on Nov 16 (evening), when slide 14 opened
+  Example 2. The Example 1 figures fig11 and fig12 keep their names although the deck has since
+  been renumbered (the settings slide is hidden; distance is now slide 11).
+- fig14a to fig14c: the default PBMC 3k UMAP with no colors, with the nine Louvain clusters
+  (resolution 0.5, Seurat's numbering) and with the tutorial's cell type names. Numbers and
+  names are placed by hand beside each group.
+- fig15a to fig15c: Louvain clusters at resolutions 0.1, 0.5 and 2.5 on the same neighbor
+  graph: 5, 9 and 18 clusters. The deck's earlier notebook screenshot reported 4 clusters at
+  resolution 0.1; this run gives 5, because the 14 platelets form their own cluster (the other
+  four are CD4 T, monocytes with DC, CD8 T with NK, and B). The slide text should say 5.
+- Double dipping (Chang, Nov 16: "we don't have to reinvent the wheel"): no new simulation is
+  in the repository. A scratch simulation was run before that decision (1,000 identical cells:
+  Poisson counts with the average profile of the naive CD4 T cells, Seurat tutorial pipeline).
+  For the record, with the caveat that it was run once and not checked for reproducibility:
+  Seurat found 2, 7 and 22 clusters at resolutions 0.5, 1 and 2.5. FindAllMarkers with default
+  settings returned Bonferroni-significant genes for them (1, 23 and 261 genes), but count
+  splitting did not remove those at the high resolution (0, 14 and 281), which points to the
+  Wilcoxon normal approximation failing for rarely detected genes in small clusters, not to
+  double dipping. Restricted to genes detected in at least 10% of cells (BH 5%), the false
+  markers were 3, 16 and 15 with the same data and 0, 0 and 2 with count splitting.

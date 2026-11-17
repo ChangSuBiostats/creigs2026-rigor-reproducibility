@@ -32,3 +32,53 @@ layout_plot <- function(cells, x, y, xlab, ylab) {
     labs(x = xlab, y = ylab) +
     theme_layout()
 }
+
+# The default UMAP with a name for each group, placed by hand beside the group
+# (not on top of the cells). `names` maps cell type to the text to show.
+label_spots <- tribble(
+  ~cell_type,      ~x,    ~y, ~hjust,
+  "Memory CD4 T",  -5.0,   8.6, 1,
+  "Naive CD4 T",    1.6,   5.6, 0,
+  "CD8 T",         -7.4,   4.6, 1,
+  "NK",            -8.3,  -1.6, 0.5,
+  "B",             -1.5, -10.6, 0,
+  "CD14+ Mono",     9.3,  -1.2, 0.5,
+  "FCGR3A+ Mono",   6.3,  -8.6, 0.5,
+  "DC",             5.4,  -1.4, 1,
+  "Platelet",       7.4,   4.1, 0.5
+)
+# Longer text (the cell type names of fig14c) needs a few other spots.
+name_spots <- tribble(
+  ~cell_type,      ~x,    ~y, ~hjust,
+  "Memory CD4 T",  -2.9,   9.2, 0.5,
+  "Naive CD4 T",    1.6,   6.6, 0,
+  "CD8 T",         -7.4,   4.6, 1,
+  "NK",            -8.3,  -1.6, 0.5,
+  "B",             -1.5, -10.6, 0,
+  "CD14+ Mono",    13.2,  -0.9, 1,
+  "FCGR3A+ Mono",   6.3,  -8.9, 0.5,
+  "DC",             5.2,  -3.4, 1,
+  "Platelet",       7.4,   4.1, 0.5
+)
+named_layout_plot <- function(cells, names, label_size = 13, spots = label_spots) {
+  spots <- mutate(spots, name = unname(names[cell_type]))
+  stopifnot(!anyNA(spots$name))
+  ggplot(cells, aes(umap1, umap2)) +
+    geom_point(aes(colour = cell_type), size = 0.9, stroke = 0, shape = 16) +
+    geom_text(data = spots, aes(x, y, label = name, hjust = hjust), family = deck$font,
+              size = label_size / .pt, colour = deck$text, fontface = "bold") +
+    scale_colour_manual(values = type_colors) +
+    scale_x_continuous(limits = c(-13.5, 13.5), expand = c(0, 0)) +
+    scale_y_continuous(limits = c(-13.5, 10), expand = c(0, 0)) +
+    labs(x = "UMAP 1", y = "UMAP 2") +
+    theme_layout()
+}
+
+# Colors for n clusters without names: the nine cell type colors first, then
+# further distinct colors (fig15c has 18 clusters).
+cluster_colors <- function(n) {
+  more <- c("#E6AB02", "#1B9E77", "#D95F02", "#E7298A", "#66A61E", "#A6761D", "#17BECF", "#BCBD22",
+            "#FF9896", "#9467BD", "#000000", "#AEC7E8", "#98DF8A", "#F7B6D2")
+  stopifnot(n <= length(type_colors) + length(more))
+  unname(c(type_colors, more))[seq_len(n)]
+}

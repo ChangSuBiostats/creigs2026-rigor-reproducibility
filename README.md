@@ -89,6 +89,12 @@ demonstrations in `reference/umap_ClaudeScience` in R, on PBMC 3k with the Seura
 pipeline, with larger and darker text. Built by `data/make_pbmc3k.R`, then seven figures.
 Slide 13 borrows figures from Irizarry's Simply Statistics post; nothing is generated for it.
 
+### Example 2, clustering: `fig14a` to `fig14c`, `fig15a` to `fig15c` (done; see `NOTES.md`)
+Request (Chang, Nov 16): the PBMC 3k UMAP before clustering, after clustering and after
+annotation (slide 14), with code; and clean versions of the three resolutions on slides 15,
+16 and 18. Built from `data/make_pbmc3k.R`. The double-dipping slides use Chang's own
+two-gene illustration and published work; nothing new is simulated for them.
+
 ### Slide 7: four examples where the standard pipeline compromises rigor
 Don't work on this slide for now. I have materials from my own course. You could help me evaluate
 later if we should add anything to my slides.
