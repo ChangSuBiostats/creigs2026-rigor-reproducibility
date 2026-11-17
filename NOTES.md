@@ -511,3 +511,14 @@ darker text.
   Wilcoxon normal approximation failing for rarely detected genes in small clusters, not to
   double dipping. Restricted to genes detected in at least 10% of cells (BH 5%), the false
   markers were 3, 16 and 15 with the same data and 0, 0 and 2 with count splitting.
+
+### fig21a to fig21c: the two-gene thought experiment
+- Request (Chang, Nov 17): put the code for the three figures of slide 21 in the repository.
+- The figures on the slide were notebook screenshots. The notebook's clustering and plotting
+  code is visible in them (k-means with two centers, seed 42), but the code that drew the cells
+  is not, so `data/make_two_gene_example.R` draws new cells with the same seed set once at the
+  top. The new figures show the same experiment, not the same points.
+- Result of this draw: clusters of 509 and 491 cells; t-test between the clusters: gene 1
+  p = 1.2e-128, gene 2 p = 9.8e-50. fig21c writes this as P < 10^-127.
+- Cluster 1 is defined as the cluster with the higher average of gene 1, so that "gene 1 is a
+  marker of cluster 1" (the slide's wording) holds whatever numbers k-means assigns.

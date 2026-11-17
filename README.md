@@ -89,11 +89,12 @@ demonstrations in `reference/umap_ClaudeScience` in R, on PBMC 3k with the Seura
 pipeline, with larger and darker text. Built by `data/make_pbmc3k.R`, then seven figures.
 Slide 13 borrows figures from Irizarry's Simply Statistics post; nothing is generated for it.
 
-### Example 2, clustering: `fig14a` to `fig14c`, `fig15a` to `fig15c` (done; see `NOTES.md`)
+### Example 2, clustering: `fig14a` to `fig14c`, `fig15a` to `fig15c`, `fig21a` to `fig21c` (done; see `NOTES.md`)
 Request (Chang, Nov 16): the PBMC 3k UMAP before clustering, after clustering and after
 annotation (slide 14), with code; and clean versions of the three resolutions on slides 15,
 16 and 18. Built from `data/make_pbmc3k.R`. The double-dipping slides use Chang's own
-two-gene illustration and published work; nothing new is simulated for them.
+two-gene illustration (`data/make_two_gene_example.R`, `fig21a` to `fig21c`, added Nov 17 at
+Chang's request) and published work.
 
 ### Slide 7: four examples where the standard pipeline compromises rigor
 Don't work on this slide for now. I have materials from my own course. You could help me evaluate
@@ -118,7 +119,7 @@ name them `fig07a_1`, `fig07a_2`, and so on.
 ## Repo layout
 ```
 data/raw/  data/processed/  data/get_data.R  data/make_processed.R  data/make_null_de.R
-data/make_pbmc3k.R
+data/make_pbmc3k.R  data/make_two_gene_example.R
 data/SOURCES.md
 figures/   output/          reference/
 NOTES.md   run_all.R  Makefile  renv.lock  README.md

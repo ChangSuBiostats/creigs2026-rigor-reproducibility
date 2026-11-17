@@ -13,6 +13,7 @@ steps <- c(
   file.path("data", "make_processed.R"),
   file.path("data", "make_null_de.R"),
   file.path("data", "make_pbmc3k.R"),
+  file.path("data", "make_two_gene_example.R"),
   sort(list.files("figures", pattern = "^fig[0-9]{2}.*\\.R$", full.names = TRUE)),
   file.path("reference", "check_slide02_a.R")
 )
