@@ -169,3 +169,21 @@ for (name in names(kang)) {
   }
 }
 stopifnot(unname(tools::sha256sum(file.path(raw_dir, "kang_ctrl_counts.mtx.gz"))) == kang_counts_sha256)
+
+# --- 6. PBMC 3k (10x Genomics), the dataset of the Seurat tutorial -----------
+# 2,700 blood cells from one healthy donor; used for Example 1 (fig09, fig11,
+# fig12). A fixed public file, pinned by checksum.
+pbmc3k <- "pbmc3k_filtered_gene_bc_matrices.tar.gz"
+pbmc3k_url <- "https://cf.10xgenomics.com/samples/cell/pbmc3k/pbmc3k_filtered_gene_bc_matrices.tar.gz"
+pbmc3k_sha256 <- "847d6ebd9a1ec9a768f2be7e40ca42cbfe75ebeb6d76a4c24167041699dc28b5"
+if (needed(pbmc3k)) {
+  curl_get(pbmc3k_url, file.path(raw_dir, pbmc3k))
+  log_source(
+    pbmc3k,
+    paste("3k PBMCs from a healthy donor, filtered gene-barcode matrices (10x Genomics,",
+          "Cell Ranger 1.1.0, hg19), CC BY 4.0. The dataset of the Seurat tutorial",
+          "satijalab.org/seurat/articles/pbmc3k_tutorial."),
+    pbmc3k_url
+  )
+}
+stopifnot(unname(tools::sha256sum(file.path(raw_dir, pbmc3k))) == pbmc3k_sha256)

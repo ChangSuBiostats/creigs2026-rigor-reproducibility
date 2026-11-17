@@ -79,3 +79,10 @@ The newest entry for a file describes the copy currently in `data/raw/`.
 - Accessed: 2026-11-16 20:58 UTC
 - SHA-256: 1d57e72e92ca8695250e88cc0f1c3fa8c0be1175d974f8b427c58f1274dc6c09
 - Size: 756342 bytes
+
+## pbmc3k_filtered_gene_bc_matrices.tar.gz
+- Description: 3k PBMCs from a healthy donor, filtered gene-barcode matrices (10x Genomics, Cell Ranger 1.1.0, hg19), CC BY 4.0. The dataset of the Seurat tutorial satijalab.org/seurat/articles/pbmc3k_tutorial.
+- URL: https://cf.10xgenomics.com/samples/cell/pbmc3k/pbmc3k_filtered_gene_bc_matrices.tar.gz
+- Accessed: 2026-11-17 01:36 UTC
+- SHA-256: 847d6ebd9a1ec9a768f2be7e40ca42cbfe75ebeb6d76a4c24167041699dc28b5
+- Size: 7621991 bytes

@@ -418,3 +418,63 @@ Purpose: a bulk-style contrast for the single-cell volcano plot in Gibson
   and stops if its SHA-256 differs from the recorded value.
 - The individual-level volcano omits two genes for which DESeq2 returns no
   p-value.
+
+## Example 1: dimension reduction (fig09a to fig09c, fig11, fig12a, fig12b)
+
+Request (Chang, Nov 16, 2026): redo slide 9's three figures and the two UMAP demonstrations in
+`reference/umap_ClaudeScience` (a Python/scanpy script and two images) in R, with larger and
+darker text.
+
+### Data and pipeline (data/make_pbmc3k.R)
+- PBMC 3k (10x Genomics), the Seurat tutorial dataset, through the tutorial's pipeline and
+  settings: 2,638 cells, 2,000 variable genes, 10 principal components, resolution 0.5, nine
+  clusters. Cell types are the tutorial's nine names, assigned by its marker genes: naive CD4 T
+  709, CD14+ monocytes 478, memory CD4 T 473, B 344, CD8 T 270, FCGR3A+ monocytes 164, NK 154,
+  DC 32, platelets 14.
+- The reference script used scanpy with other settings (1,838 variable genes, 40 components,
+  50 neighbors, Leiden at resolution 2, UMAP minimum distance 0.5). The R version uses the
+  Seurat tutorial throughout, so that slides 9, 11 and 12 show the same analysis.
+- Text in these figures is black and at least 12 pt (names of cell types) or 14 pt (everything
+  else) at placed size, after Chang's comment that earlier figures were too small and too light.
+
+### fig11: five UMAP layouts
+- Layouts: Seurat's default (30 neighbors, minimum distance 0.3, seed 42); the default with
+  seed 1; 5 neighbors and minimum distance 0.1; 100 neighbors and minimum distance 0.8; the
+  default with random starting positions (seed 1). Seeds 1 and 2 were fixed before any layout
+  was looked at; a second random start (seed 2) is in `pbmc3k_layouts.csv` but not drawn.
+- What it shows, and what it does not: with Seurat's default (spectral) starting positions, a
+  different seed changes little: the T cell and monocyte groups stay put, and only the
+  B cells and platelets shift. The seed matters much more with random starting positions
+  (Kobak & Linderman 2021). The slide should not claim that the default layout changes a lot
+  from seed to seed.
+
+### fig12a, fig12b: distances between cell types
+- Distance between two cell types = distance between their average cells, (1) in the 10
+  principal components UMAP is given and (2) on the default UMAP. 36 pairs.
+- Rank correlation between the two: 0.29 (0.47 without the eight pairs involving platelets).
+- NK and CD8 T are 11.1 apart in the data and 3.4 on the UMAP; B and naive CD4 T are 11.6 apart
+  in the data and 15.5 on the UMAP. Platelets are by far the most distant type in the data
+  (about 50 from every other type, against 5 to 23 for all other pairs) and sit 5 to 18 from the
+  others on the UMAP.
+- Check: the 36 distances in the 10 components agree with those in the 2,000 scaled variable
+  genes (rank correlation 0.99) and in all genes, log-normalized (0.95). In all three spaces the
+  platelets are the most distant type. The three sets are in `pbmc3k_type_distances.csv`.
+- Units differ between the axes of fig12b (data and UMAP), so only the ordering and the ratios
+  are compared, not the values.
+
+### The reference folder's "near-identical cells drawn far apart" analysis was not carried over
+- The reference figure joins pairs of CD4 T cells that are close neighbors in the data but
+  drawn farther apart than the gap between CD8 T and NK cells (289 pairs in the scanpy run).
+- Repeated in R with the same definition (closest 30% of the 15-nearest-neighbor pairs, both
+  cells CD4 T, UMAP distance above the distance between the CD8 T and NK centers):
+  - Seurat tutorial settings (10 components, 30 neighbors, minimum distance 0.3): 1 pair of 7,380.
+  - The reference script's settings inside the Seurat pipeline (40 components, 50 neighbors,
+    minimum distance 0.5): 372 pairs of 8,765.
+- So the effect depends on the settings and is absent under the tutorial's. It was run in a
+  scratch session only and is not part of the repository. fig12a and fig12b make the distance
+  point in a way that holds under the tutorial settings.
+
+### Slide 13 (no generated figures)
+- Decision (Chang, Nov 16): borrow the simulation and the genotype example from Irizarry,
+  "Biologists, stop putting UMAP plots in your papers", Simply Statistics, Dec 23, 2024
+  (updated Feb 13, 2025), instead of redoing them.

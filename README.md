@@ -83,6 +83,12 @@ Request (Chang, Nov 16): a bulk-style contrast to the single-cell volcano plot i
 (2022) Fig. 1A, and the null experiment of Squair et al. (2021), in R. Built from the
 untreated donors of Kang et al. (2018): `data/make_null_de.R`, then four figures.
 
+### Example 1, dimension reduction: `fig09a` to `fig09c`, `fig11`, `fig12a`, `fig12b` (done; see `NOTES.md`)
+Request (Chang, Nov 16): redo the PCA, t-SNE and UMAP figures of slide 9 and the UMAP
+demonstrations in `reference/umap_ClaudeScience` in R, on PBMC 3k with the Seurat tutorial
+pipeline, with larger and darker text. Built by `data/make_pbmc3k.R`, then six figures.
+Slide 13 borrows figures from Irizarry's Simply Statistics post; nothing is generated for it.
+
 ### Slide 7: four examples where the standard pipeline compromises rigor
 Don't work on this slide for now. I have materials from my own course. You could help me evaluate
 later if we should add anything to my slides.
@@ -106,6 +112,7 @@ name them `fig07a_1`, `fig07a_2`, and so on.
 ## Repo layout
 ```
 data/raw/  data/processed/  data/get_data.R  data/make_processed.R  data/make_null_de.R
+data/make_pbmc3k.R
 data/SOURCES.md
 figures/   output/          reference/
 NOTES.md   run_all.R  Makefile  renv.lock  README.md
