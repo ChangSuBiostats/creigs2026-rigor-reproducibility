@@ -23,6 +23,12 @@
 #           data/processed/pbmc3k_layouts.csv         one row per cell and layout
 #           data/processed/pbmc3k_type_distances.csv  one row per pair of cell
 #                                                     types and layout (fig12)
+#           data/processed/pbmc3k_gene_pairs.csv      one row per cell and gene
+#                                                     pair (fig08): three pairs
+#                                                     of genes drawn at random
+#                                                     from all 13,714 genes,
+#                                                     seed 20261118 (the lecture
+#                                                     date), in the order drawn
 
 suppressPackageStartupMessages({
   library(Seurat)
@@ -83,6 +89,22 @@ cells <- data.frame(
 )
 write_csv(cells, file.path(processed, "pbmc3k_cells.csv"))
 message(nrow(cells), " cells; ", paste(names(table(cell_type)), table(cell_type), collapse = ", "))
+
+# --- three random pairs of genes (fig08) -------------------------------------
+set.seed(20261118)
+drawn <- matrix(sample(rownames(pbmc), 6), ncol = 2, byrow = TRUE)
+lognorm <- GetAssayData(pbmc, layer = "data")
+write_csv(
+  do.call(rbind, lapply(1:3, function(i) {
+    data.frame(pair = i, gene_x = drawn[i, 1], gene_y = drawn[i, 2], cell = cells$cell,
+               cell_type = cell_type, x = lognorm[drawn[i, 1], ], y = lognorm[drawn[i, 2], ],
+               row.names = NULL)
+  })),
+  file.path(processed, "pbmc3k_gene_pairs.csv")
+)
+message("random gene pairs: ", paste(drawn[, 1], drawn[, 2], sep = " and ", collapse = "; "),
+        "; cells with both genes at zero: ",
+        paste(sapply(1:3, function(i) sum(lognorm[drawn[i, 1], ] == 0 & lognorm[drawn[i, 2], ] == 0)), collapse = ", "))
 
 # --- UMAP under other settings and starting positions ------------------------
 pcs <- Embeddings(pbmc, "pca")[, 1:10]  # what UMAP is given

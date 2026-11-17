@@ -478,3 +478,11 @@ darker text.
 - Decision (Chang, Nov 16): borrow the simulation and the genotype example from Irizarry,
   "Biologists, stop putting UMAP plots in your papers", Simply Statistics, Dec 23, 2024
   (updated Feb 13, 2025), instead of redoing them.
+
+### fig08: a random pair of genes
+- Request (Chang, Nov 16): plot the real cells by a random pair of genes, as the motivation for
+  dimension reduction on slide 8.
+- Three pairs were drawn from all 13,714 genes with seed 20261118 (the lecture date), fixed
+  before looking: ZFPL1 and ZFP37; ATAD2 and ZNF107; PPP3CA and CTD-2336O2.1. Cells with no
+  reads of either gene: 2,518, 2,589 and 2,459 of 2,638. fig08 shows the first pair; no pair
+  was chosen for its picture.
