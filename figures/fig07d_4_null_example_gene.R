@@ -1,6 +1,6 @@
 # fig07d_4: why the cell-level test is over-confident (one gene, by donor).
 #
-# Slide:  Example 3, pseudo-replication in differential expression (README: fig07d)
+# Slide:  28, "Why: cells from the same person are not independent" (Example 3)
 # Shows:  expression of one gene in every cell, grouped by donor, for the donor
 #         split of fig07d_1. The gene is the most significant cell-level
 #         discovery that the donor-level test does not call. Gray points:

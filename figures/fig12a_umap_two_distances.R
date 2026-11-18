@@ -1,6 +1,6 @@
 # fig12a: two distances on the default UMAP.
 #
-# Slide:  12, "Global distance can be misleading"
+# Slide:  11, "Distance between clusters can be misleading"
 # Shows:  the default UMAP of the PBMC 3k cells (as fig09c), with lines between
 #         the centers of two pairs of cell types: NK and CD8 T, and B and naive
 #         CD4 T. In the data the two pairs are about equally far apart (11.1

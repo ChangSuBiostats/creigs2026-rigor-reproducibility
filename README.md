@@ -1,125 +1,145 @@
-# CREiGS 2026 — Rigor and Reproducibility in Single-Cell Genomics: figures
+# Rigor and Reproducibility in Single-Cell Genomics: figure code
 
-Lecture: Chang Su, CREiGS 2026 (Icahn School of Medicine at Mount Sinai), Nov 18, 2026.
-This repo makes every figure in the lecture deck reproducible. It does not edit the deck;
-figures are placed into the .pptx separately.
+Code and data for the figures in the lecture "Rigor and Reproducibility in Single-Cell
+Genomics" by Chang Su (Emory University), given at CREiGS 2026, Icahn School of Medicine
+at Mount Sinai, on Nov 18, 2026.
 
-## Ground rules
-- All code is R (tidyverse and ggplot2). One script per figure:
-  `figures/figNN_short_name.R`. The script reads from `data/`, writes to `output/`, and
-  makes no other changes. Run scripts from the repository root.
-- Raw data in `data/raw/` is never edited by hand. Downloads are scripted in
-  `data/get_data.R`, which records the source URL, access date and file checksum in
-  `data/SOURCES.md`.
-- Derived tables go in `data/processed/` and are produced by scripts.
-- `make all` (or `Rscript run_all.R`) rebuilds every figure from scratch.
-- Pin the environment (`renv.lock`; restore with `renv::restore()`). Set seeds for anything random,
-  and record the seed in the script header.
-- Commit after each figure is working. Message format: `figNN: <what changed>`.
-- Each script starts with a header that gives the slide number, what the figure shows,
-  the data source and citation, and the seed.
-- Never invent data. If a field isn't in the source, say so in `NOTES.md` rather than
-  imputing it.
+Every figure that was generated for the lecture can be rebuilt from this repository with
+one command. The slides themselves are not in the repository, and figures borrowed from
+published papers are not redrawn here (they are listed below with their sources).
 
-## Figure style (must match the deck)
-- Font: Georgia, falling back to serif. Axis labels 14 pt, tick labels 12 pt; no
-  in-figure titles (the slide carries the title).
-- Colors: highlight color #4472C4 (blue), secondary color #ED7D31 (orange), neutral
-  #A5A5A5, text #000000, secondary text #44546A. Use gray for context and blue for the
-  series that carries the message.
-- No top or right spines, no gridlines on bar charts, light gray (#E7E6E6) horizontal
-  gridlines on line and scatter charts. Label series directly, with no legend where possible.
-- Sizes (in inches, at 300 dpi):
-  - half-slide panel: 3.9 × 2.85 (matches the existing figures on slide 2)
-  - full content area: 10.2 × 4.8
-- Export both `output/figNN.png` (300 dpi) and `output/figNN.svg`.
-- White background, no transparency.
+## Rebuild the figures
 
-## Tasks
+Requirements: R 4.5.2 and the packages recorded in `renv.lock` (restore them with
+`renv::restore()`), and an internet connection for the first run.
 
-### Slide 2: "Rapid Growth in Single Cell Studies" (done; see `NOTES.md`)
-Source: Svensson, da Veiga Beltrame & Pachter (2020), *A curated database reveals trends in
-single-cell transcriptomics*, Database. The live table is at
-nxn.se/single-cell-studies/data.tsv (the notebooks are at github.com/vals/single-cell-studies).
-Final design, three panels: `fig02c` publications per year (PubMed count), `fig02a` cells
-per study, `fig02b` tissue share. Original tasks, kept for the record:
-1. **Verify the two existing figures.** Another agent made them. Reconstruct each one
-   from the database (copies of the current images go in `reference/slide02_*.png`),
-   then compare and record any differences in `NOTES.md`: axes, counts, date range,
-   log scale.
-   - `fig02a`: the first existing panel, reproduced
-   - `fig02b`: the second existing panel, reproduced
-2. **New figure: number of subjects (individuals) per study over time.** Built first
-   from the Svensson database, then moved to slide 3 as `fig03a` using CELLxGENE.
-   Publication date on the x-axis, subjects per study on the y-axis (log scale if the
-   range calls for it); points plus a smoothed trend or yearly median. First check
-   whether the database records the number of individuals or donors. If it doesn't,
-   report that and propose an alternative (e.g., samples per study, or a manually
-   curated subset) before building anything.
-
-### Slide 3: "Increasing Complexity of Single Cell Studies" (done; see `NOTES.md`)
-Decision (Chang, Nov 16): use CELLxGENE Discover only. `fig03a` donors per study over
-time; `fig03b` share of studies with disease and control donors, and with more than one
-assay. Batches and longitudinal design are not recorded there. Original brief:
-Summarize how study design has become more complex over time:
-- Technical: number of batches, sequencing platform or technique (and how many
-  platforms per study)
-- Biological: number of individuals, disease vs. control design, longitudinal design
-Start with what the Svensson database already has (technique, date, tissue, and
-possibly sample counts). List which dimensions are covered and which would need
-manual curation or another source (e.g., CELLxGENE Census metadata, HCA). Propose
-1–2 figures (`fig03a`, `fig03b`) and confirm with Chang before curating anything by hand.
-
-### Slide 5: "Rapid Growth in Single Cell Analysis Tools" (done; see `NOTES.md`)
-Redrawn from the scRNA-tools database, because the paper figure ends in 2021. Original brief:
-The plan is to reuse a figure from a review. If Chang wants it redrawn in deck style,
-use the scRNA-tools database (Zappia & Theis 2021, *Over 1000 tools reveal trends in the
-single-cell RNA-seq analysis landscape*, Genome Biology; data believed to be at
-github.com/scRNA-tools/scRNA-tools) for `fig05a`: cumulative tools over time, and
-`fig05b`: tools per analysis category.
-
-### Example 3, differential expression: `fig07d_1` to `fig07d_6` (done; see `NOTES.md`)
-Request (Chang, Nov 16): a bulk-style contrast to the single-cell volcano plot in Gibson
-(2022) Fig. 1A, and the null experiment of Squair et al. (2021), in R. Built from the
-untreated donors of Kang et al. (2018): `data/make_null_de.R`, then four figures.
-
-### Example 1, dimension reduction: `fig08`, `fig09a` to `fig09c`, `fig11`, `fig12a`, `fig12b` (done; see `NOTES.md`)
-Request (Chang, Nov 16): redo the PCA, t-SNE and UMAP figures of slide 9 and the UMAP
-demonstrations in `reference/umap_ClaudeScience` in R, on PBMC 3k with the Seurat tutorial
-pipeline, with larger and darker text. Built by `data/make_pbmc3k.R`, then seven figures.
-Slide 13 borrows figures from Irizarry's Simply Statistics post; nothing is generated for it.
-
-### Example 2, clustering: `fig14a` to `fig14c`, `fig15a` to `fig15c`, `fig21a` to `fig21c` (done; see `NOTES.md`)
-Request (Chang, Nov 16): the PBMC 3k UMAP before clustering, after clustering and after
-annotation (slide 14), with code; and clean versions of the three resolutions on slides 15,
-16 and 18. Built from `data/make_pbmc3k.R`. The double-dipping slides use Chang's own
-two-gene illustration (`data/make_two_gene_example.R`, `fig21a` to `fig21c`, added Nov 17 at
-Chang's request) and published work.
-
-### Slide 7: four examples where the standard pipeline compromises rigor
-Don't work on this slide for now. I have materials from my own course. You could help me evaluate
-later if we should add anything to my slides.
-Simulation-based. Use Seurat or Scanpy defaults as the "standard pipeline" and keep
-every simulation small enough to run in minutes. One script per example, with a fixed seed:
-- `fig07a` **Dimension reduction**: how UMAP can mislead interpretation (e.g., distances
-  between clusters and cluster sizes are not meaningful; the result depends on
-  n_neighbors and min_dist).
-- `fig07b` **Clustering**: how spurious clusters arise (e.g., clustering homogeneous
-  data at high resolution, and double dipping when the same data is used to find
-  clusters and then test for markers).
-- `fig07c` **Batch correction**: how over-correction removes biological signal (a
-  simulated condition effect that is confounded with batch, before vs. after
-  integration).
-- `fig07d` **Differential expression**: how pseudo-replication leads to over-confidence
-  (cell-level tests vs. pseudobulk on simulated data with no true effect: p-value
-  histograms and false positive rate).
-Each example may need two panels (the problem, and what the rigorous approach shows);
-name them `fig07a_1`, `fig07a_2`, and so on.
-
-## Repo layout
 ```
-data/raw/  data/processed/  data/get_data.R  data/make_processed.R  data/make_null_de.R
-data/make_pbmc3k.R  data/make_two_gene_example.R
-data/SOURCES.md
-figures/   output/          reference/
-NOTES.md   run_all.R  Makefile  renv.lock  README.md
+Rscript run_all.R        # or: make all
+```
+
+This downloads any raw data that is missing and checks it against a recorded checksum,
+builds the derived tables in `data/processed/`, runs every script in `figures/`, and
+writes a PNG (300 dpi) and an SVG per figure to `output/`. It takes about 10 minutes on a
+laptop. All random steps use fixed seeds, so the files in `output/` and `data/processed/`
+come out identical on a second run with the same package versions.
+
+To rebuild one figure, run its script from the repository root, for example
+`Rscript figures/fig09c_umap.R`.
+
+## Figures and where they appear
+
+Figure names were given while the lecture was being written, so the number in a file name
+does not always match the final slide number. This table gives the final slide.
+
+| Slide | Slide title | Figure | Script |
+|---|---|---|---|
+| 2 | Rapid Growth in Single Cell Studies | `fig02c` publications per year | `figures/fig02c_publications_per_year.R` |
+| 2 | | `fig02a` cells per study | `figures/fig02a_cells_per_study.R` |
+| 2 | | `fig02b` tissues profiled | `figures/fig02b_tissues.R` |
+| 3 | Increasing Complexity of Single Cell Studies | `fig03a` individuals per study | `figures/fig03a_donors_per_study.R` |
+| 3 | | `fig03b` share of studies with more complex designs | `figures/fig03b_design_complexity.R` |
+| 5 | Rapid Growth in Single Cell Analysis Tools | `fig05a` number of tools over time | `figures/fig05a_tools_over_time.R` |
+| 5 | | `fig05b` tools per category of analysis | `figures/fig05b_tools_per_category.R` |
+| 8 | Ex. 1: Dimension reduction | `fig08` cells plotted by two genes picked at random | `figures/fig08_random_gene_pair.R` |
+| 9 | Dimension reduction for visualizing single-cell data | `fig09a` PCA, `fig09b` t-SNE, `fig09c` UMAP | `figures/fig09a_pca.R`, `fig09b_tsne.R`, `fig09c_umap.R` |
+| 11 | Distance between clusters can be misleading | `fig12a` two distances on the UMAP | `figures/fig12a_umap_two_distances.R` |
+| 11 | | `fig12b` distance in expression against distance on the UMAP, 36 pairs of cell types | `figures/fig12b_umap_distance_scatter.R` |
+| 14 | Ex. 2: Clustering and cell type annotation | `fig14a` cells, `fig14b` clusters, `fig14c` cell types | `figures/fig14a_umap_unclustered.R`, `fig14b_umap_clusters.R`, `fig14c_umap_cell_types.R` |
+| 15, 16, 18 | Clustering … at what resolution? | `fig15a`, `fig15b`, `fig15c` clusters at resolution 0.1, 0.5 and 2.5 | `figures/fig15a_clusters_resolution_0.1.R`, `fig15b_…0.5.R`, `fig15c_…2.5.R` |
+| 19 to 21 | Thought experiment | `fig21a`, `fig21b`, `fig21c` one group of cells, split in two, and the "marker gene" | `figures/fig21a_two_genes_cells.R`, `fig21b_two_genes_clusters.R`, `fig21c_two_genes_marker.R` |
+| 25 | Case study with real T cell data | `fig07d_1` each cell as a unit, `fig07d_2` each individual as a unit | `figures/fig07d_1_null_volcano_cell.R`, `fig07d_2_null_volcano_pseudobulk.R` |
+| 26 | False positives across datasets and methods | `fig07d_3` all 35 random splits | `figures/fig07d_3_null_discoveries.R` |
+| 28 | Why: cells from the same person are not independent | `fig07d_4` GAPDH, person by person | `figures/fig07d_4_null_example_gene.R` |
+
+Notes on the table:
+
+- Slides 19 to 21 show the author's original drawings of the thought experiment;
+  `fig21a` to `fig21c` reproduce them from code.
+- Three figures were made and are not in the final deck: `fig11` (five UMAP layouts of the
+  same cells under different settings and starting positions) and `fig07d_5`, `fig07d_6`
+  (the two "bursts" of a single-cell volcano plot).
+
+### Figures on the slides that are not generated here
+
+| Slide | Figure | Source |
+|---|---|---|
+| 4 | UMAPs from the Seurat and Scanpy PBMC 3k tutorials (copies in `reference/`) | satijalab.org/seurat, scanpy-tutorials.readthedocs.io |
+| 10 | Published UMAPs | Yazar et al., Science 2022; Green et al., Nature 2024; All of Us Research Program Genomics Investigators, Nature 2024 |
+| 12 | Simulation and genotype examples | R. Irizarry, "Biologists, stop putting UMAP plots in your papers", Simply Statistics 2024 |
+| 17 | Marker gene table and plot | Seurat PBMC 3k tutorial |
+| 24 | Stylized volcano plot | Gibson, PLoS Genetics 2022, Fig. 1A |
+| 26, 27, 29 | False discoveries in 14 studies, spike-ins, pseudobulk schematic | Squair et al., Nature Communications 2021, Figs. 4e, 2e, 2a |
+
+## Data
+
+All raw data is public. `data/get_data.R` downloads it, and `data/SOURCES.md` records the
+URL, access date and SHA-256 checksum of each file.
+
+| Used for | Data | Reference |
+|---|---|---|
+| Slide 2 | Single-cell studies database; PubMed record counts | Svensson, da Veiga Beltrame & Pachter, Database 2020 |
+| Slide 3 | CZ CELLxGENE Discover collection and dataset metadata | CZI Cell Science Program et al., Nucleic Acids Research 2025 |
+| Slide 5 | scRNA-tools database | Zappia & Theis, Genome Biology 2021 |
+| Examples 1 and 2 | PBMC 3k, 2,700 blood cells from one donor | 10x Genomics |
+| Example 3 | Untreated blood cells of 8 individuals (GEO GSE96583) | Kang et al., Nature Biotechnology 2018 |
+
+Several of these sources change over time (the studies database, CELLxGENE, PubMed), so
+the snapshots used for the lecture are kept in `data/raw/`. The one exception is the
+Kang et al. count matrix (28 MB), which is downloaded on the first run and verified
+against its checksum.
+
+The single-cell analysis of PBMC 3k follows the Seurat tutorial
+(satijalab.org/seurat/articles/pbmc3k_tutorial): 2,638 cells after quality control,
+2,000 variable genes, 10 principal components, Louvain clustering.
+
+## How the repository is organized
+
+```
+data/get_data.R              downloads raw data, writes data/SOURCES.md
+data/make_processed.R        derived tables for slides 2, 3 and 5
+data/make_pbmc3k.R           PBMC 3k pipeline, layouts and distances (Examples 1 and 2)
+data/make_two_gene_example.R the two-gene thought experiment (Example 2)
+data/make_null_de.R          differential expression with no true difference (Example 3)
+data/raw/                    downloaded files, never edited by hand
+data/processed/              tables written by the scripts above
+figures/                     one script per figure, plus shared style files
+output/                      the figures (PNG and SVG)
+reference/                   images the figures were checked against
+run_all.R, Makefile          rebuild everything
+renv.lock                    package versions
+NOTES.md                     findings, decisions and known gaps, figure by figure
+```
+
+Rules the code follows:
+
+- One script per figure. A script reads from `data/`, writes to `output/`, and changes
+  nothing else. Its header gives the slide, what the figure shows, the data source and the
+  seed.
+- Raw data is never edited by hand. Every derived number comes from a script.
+- Seeds are fixed in the scripts and were chosen before looking at the results.
+- No data is invented. Where a source does not record something, `NOTES.md` says so.
+
+`NOTES.md` is the place to look for what a figure does and does not show: the exact
+numbers behind each slide, the choices made, and analyses that were tried and dropped.
+
+## Figure style
+
+- Font: Georgia, falling back to serif. Text in black, at least 14 pt at the size the
+  figure has on the slide. No titles inside figures; the slide carries the title.
+- Colors: blue #4472C4 for the series that carries the message, orange #ED7D31 for the
+  contrast, gray #A5A5A5 for context.
+- No top or right axis lines. Light gray (#E7E6E6) gridlines on line and scatter charts,
+  none on bar charts. Series are labeled directly where possible.
+- Standard sizes in inches: 3.9 × 2.85 for a half-slide panel, 10.2 × 4.8 for the full
+  content area. Other sizes are noted in the script and in `NOTES.md`.
+- White background, 300 dpi PNG and SVG.
+
+## License and citation
+
+The code is released under the MIT License (see `LICENSE`). The data in `data/raw/`
+belongs to its sources and keeps their terms; please cite the references above when using
+it. Figures borrowed from published papers are not part of this repository.
+
+If you use the figures or the code, please cite the lecture: Chang Su, "Rigor and
+Reproducibility in Single-Cell Genomics", CREiGS 2026, Icahn School of Medicine at Mount
+Sinai.

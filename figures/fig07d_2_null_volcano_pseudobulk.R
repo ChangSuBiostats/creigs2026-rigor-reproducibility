@@ -1,6 +1,7 @@
 # fig07d_2: the same comparison tested at the donor level (volcano plot).
 #
-# Slide:  Example 3, pseudo-replication in differential expression (README: fig07d)
+# Slide:  25, "Case study with real T cell data" (Example 3, cells against
+#         individuals as the unit of a differential expression test)
 # Shows:  the same cells, genes and donor split as fig07d_1, tested as a bulk
 #         RNA-seq experiment would be: counts summed per donor (pseudobulk),
 #         then DESeq2 with four donors per group. Blue: genes called at a

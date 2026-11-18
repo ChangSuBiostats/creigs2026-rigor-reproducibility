@@ -1,7 +1,7 @@
 # fig07d_6: the outer burst: rarely detected genes added.
 #
-# Slide:  Example 3, differential expression (README: fig07d), the slide that
-#         returns to the two bursts of Gibson's drawing.
+# Slide:  not in the final deck (backup for Example 3, differential
+#         expression: the two bursts of Gibson's drawing).
 # Shows:  fig07d_5 plus, in orange, the genes detected in 1 to 10% of cells.
 #         They form the wide, low outer burst of Gibson's "double volcano":
 #         larger fold changes, weaker significance. Identical axes to

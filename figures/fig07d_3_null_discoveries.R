@@ -1,6 +1,7 @@
 # fig07d_3: false discoveries across all 35 donor splits.
 #
-# Slide:  Example 3, pseudo-replication in differential expression (README: fig07d)
+# Slide:  26, "False positives across datasets and methods" (Example 3, cells
+#         against individuals as the unit of a differential expression test)
 # Shows:  number of genes called differentially expressed (false discovery rate
 #         below 5%) in each of the 35 ways to split eight untreated donors into
 #         two groups of four, for the cell-level Wilcoxon test and for

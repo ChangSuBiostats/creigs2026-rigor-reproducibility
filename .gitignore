@@ -7,3 +7,5 @@ __pycache__/
 .Rproj.user/
 # large archived download, re-fetched and checksum-verified by data/get_data.R
 data/raw/kang_ctrl_counts.mtx.gz
+# the slides are shared separately, not through this repository
+*.pptx

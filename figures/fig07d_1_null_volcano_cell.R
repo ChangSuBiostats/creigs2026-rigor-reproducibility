@@ -1,6 +1,7 @@
 # fig07d_1: false discoveries from a cell-level test (volcano plot).
 #
-# Slide:  Example 3, pseudo-replication in differential expression (README: fig07d)
+# Slide:  25, "Case study with real T cell data" (Example 3, cells against
+#         individuals as the unit of a differential expression test)
 # Shows:  volcano plot for a comparison in which no true difference exists: CD4 T
 #         cells of eight untreated donors, split into two groups of four
 #         donors. Test: Wilcoxon rank-sum on log-normalized counts with every

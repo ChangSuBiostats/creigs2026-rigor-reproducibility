@@ -1,6 +1,6 @@
 # fig12b: distances between cell types, in the data and on the UMAP.
 #
-# Slide:  12, "Global distance can be misleading"
+# Slide:  11, "Distance between clusters can be misleading"
 # Shows:  one point for each of the 36 pairs of the nine PBMC 3k cell types.
 #         x: distance between the two types in the data UMAP is given (10
 #         principal components). y: distance between them on the default UMAP.

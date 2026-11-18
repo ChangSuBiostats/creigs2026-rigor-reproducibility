@@ -319,7 +319,7 @@ References:
 - Zimmerman KD, Espeland MA, Langefeld CD (2021). A practical solution to
   pseudoreplication bias in single-cell studies. Nature Communications 12:738.
 
-## Example 3: pseudo-replication in differential expression (fig07d)
+## Example 3: cells against individuals in differential expression (fig07d)
 
 Purpose: a bulk-style contrast for the single-cell volcano plot in Gibson
 (2022) Fig. 1A, and an R version of the null experiment in Squair et al.

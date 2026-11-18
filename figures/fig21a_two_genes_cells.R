@@ -1,6 +1,7 @@
 # fig21a: cells with no subtypes, two genes.
 #
-# Slide:  21, the thought experiment of Example 2 ("cells with no subtypes")
+# Slide:  19 to 21, the thought experiment of Example 2. The deck shows
+#         Chang's original drawings; this script reproduces them.
 # Shows:  1,000 simulated cells from one homogeneous population, two genes.
 #         fig21a: the cells. fig21b: the same cells split into two clusters by
 #         k-means. fig21c: gene 1 in the two clusters, with the p-value of a

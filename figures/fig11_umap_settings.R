@@ -1,6 +1,7 @@
 # fig11: the same cells, five UMAP layouts.
 #
-# Slide:  11, "UMAP layout is sensitive to parameter settings"
+# Slide:  not in the final deck (backup for Example 1; the slide "UMAP layout
+#         is sensitive to parameter settings" was dropped)
 # Shows:  UMAP of the 2,638 PBMC 3k cells, run five times on the same 10
 #         principal components:
 #           1. Seurat's default (30 neighbors, minimum distance 0.3, seed 42)

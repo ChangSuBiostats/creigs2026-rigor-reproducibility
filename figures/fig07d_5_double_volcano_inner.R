@@ -1,7 +1,7 @@
 # fig07d_5: the inner burst: genes detected in many cells.
 #
-# Slide:  Example 3, differential expression (README: fig07d), the slide that
-#         returns to the two bursts of Gibson's drawing.
+# Slide:  not in the final deck (backup for Example 3, differential
+#         expression: the two bursts of Gibson's drawing).
 # Shows:  cell-level volcano plot of the donor split of fig07d_1, for the genes
 #         detected in at least 10% of cells (the genes of fig07d_1), with the
 #         fold change computed without Seurat's offset. First of two frames;
