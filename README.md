@@ -4,8 +4,8 @@ Code and data for the figures in the lecture "Rigor and Reproducibility in Singl
 Genomics" by Chang Su (Emory University), given at CREiGS 2026, Icahn School of Medicine
 at Mount Sinai, on Nov 18, 2026.
 
-Every figure that was generated for the lecture can be rebuilt from this repository with
-one command. The slides themselves are not in the repository, and figures borrowed from
+The slides are in `CREiGS_reproducibility_Su.pdf`. Every figure that was generated for
+the lecture can be rebuilt from this repository with one command. Figures borrowed from
 published papers are not redrawn here (they are listed below with their sources).
 
 ## Rebuild the figures
@@ -64,7 +64,6 @@ Notes on the table:
 
 | Slide | Figure | Source |
 |---|---|---|
-| 4 | UMAPs from the Seurat and Scanpy PBMC 3k tutorials (copies in `reference/`) | satijalab.org/seurat, scanpy-tutorials.readthedocs.io |
 | 10 | Published UMAPs | Yazar et al., Science 2022; Green et al., Nature 2024; All of Us Research Program Genomics Investigators, Nature 2024 |
 | 12 | Simulation and genotype examples | R. Irizarry, "Biologists, stop putting UMAP plots in your papers", Simply Statistics 2024 |
 | 17 | Marker gene table and plot | Seurat PBMC 3k tutorial |
@@ -106,6 +105,7 @@ data/processed/              tables written by the scripts above
 figures/                     one script per figure, plus shared style files
 output/                      the figures (PNG and SVG)
 reference/                   images the figures were checked against
+CREiGS_reproducibility_Su.pdf  the slides, as presented
 run_all.R, Makefile          rebuild everything
 renv.lock                    package versions
 NOTES.md                     findings, decisions and known gaps, figure by figure
@@ -139,7 +139,9 @@ numbers behind each slide, the choices made, and analyses that were tried and dr
 
 The code is released under the MIT License (see `LICENSE`). The data in `data/raw/`
 belongs to its sources and keeps their terms; please cite the references above when using
-it. Figures borrowed from published papers are not part of this repository.
+it. The slides include figures
+borrowed from published papers, credited on each slide; those figures remain under the
+terms of their sources and are not covered by the MIT License.
 
 If you use the figures or the code, please cite the lecture: Chang Su, "Rigor and
 Reproducibility in Single-Cell Genomics", CREiGS 2026, Icahn School of Medicine at Mount
