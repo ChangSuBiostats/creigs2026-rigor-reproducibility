@@ -19,8 +19,9 @@ Rscript run_all.R        # or: make all
 
 This downloads any raw data that is missing and checks it against a recorded checksum,
 builds the derived tables in `data/processed/`, runs every script in `figures/`, and
-writes a PNG (300 dpi) and an SVG per figure to `output/`. It takes about 10 minutes on a
-laptop. All random steps use fixed seeds, so the files in `output/` and `data/processed/`
+writes a PNG (300 dpi) and an SVG per figure to `output/`. It takes about 3 minutes on a
+laptop. The download step adds an entry with the new access date to `data/SOURCES.md`;
+no other tracked file changes. All random steps use fixed seeds, so the files in `output/` and `data/processed/`
 come out identical on a second run with the same package versions.
 
 To rebuild one figure, run its script from the repository root, for example
